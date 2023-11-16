@@ -1,0 +1,77 @@
+﻿Create or alter view spReporteFunciones 
+as
+SELECT CLIENTES.NOMBRE + ' ' + CLIENTES.APELLIDO AS Cliente, 
+			 FUNCIONES.FECHA, 
+			 PELICULAS.NOMBRE Pelicula, 
+			 CASE WHEN PELICULAS.SUBTITULADA = 1 THEN 'Si' ELSE 'No' END AS Subitulada, 
+       SALAS.NOMBRE AS Sala
+FROM PELICULAS 
+INNER JOIN FUNCIONES ON PELICULAS.COD_PELICULA = FUNCIONES.COD_PELICULA 
+INNER JOIN SALAS ON FUNCIONES.COD_SALA = SALAS.COD_SALA 
+CROSS JOIN CLIENTES
+
+--**************************************************************************************
+create or alter procedure spNuevaFuncion 
+(
+	@IDPelicula int,
+	@IDSala int
+)
+as
+BEGIN
+	INSERT INTO FUNCIONES ( COD_PELICULA, COD_SALA, FECHA )
+			 VALUES (@IDPelicula,
+							 @IDSala,
+							 CURRENT_TIMESTAMP
+							)
+END;
+--**************************************************************************************
+create or alter procedure spNuevaFuncion 
+(
+	@IDPelicula int,
+	@IDSala int
+)
+as
+BEGIN
+	INSERT INTO FUNCIONES ( COD_PELICULA, COD_SALA, FECHA )
+			 VALUES (@IDPelicula,
+							 @IDSala,
+							 CURRENT_TIMESTAMP
+							)
+END;
+--**************************************************************************************
+create or alter procedure spNuevaPelicula
+(
+	@Nombre varchar(50),
+	@Sinopsis varchar(200),
+	@Productora varchar(50),
+	@Clasificacion int,
+	@Idioma int,
+	@Subtitulada int
+)
+as -- Select * from peliculas
+BEGIN
+	BEGIN TRY
+		INSERT INTO PELICULAS (Nombre,Sinopsis,PRODUCTORA,COD_CLASIFICACION_INCA,COD_IDIOMA,Subtitulada)
+				VALUES (@Nombre,
+								@Sinopsis,
+								@Productora,
+								@Clasificacion,
+								@Idioma,
+								@Subtitulada
+								)
+	END TRY
+	BEGIN CATCH
+		IF (@@TRANCOUNT = 0)
+			SELECT 'Error Grabando Pelicula';
+	END CATCH
+END;
+--**************************************************************************************
+create or alter view vFunciones
+as
+	Select F.FECHA,
+				P.NOMBRE, P.PRODUCTORA, P.SUBTITULADA,
+				CI.NOMBRE as 'Clasificacion INCA'
+	From FUNCIONES F 
+	Join PELICULAS P ON P.COD_PELICULA = F.COD_PELICULA
+	Join GENEROS_PELICULAS GP ON GP.COD_PELICULA = P.COD_PELICULA
+	Join CLASIFICACIONES_INCA CI ON CI.COD_CLASIFICACION_INCA = P.COD_CLASIFICACION_INCA
