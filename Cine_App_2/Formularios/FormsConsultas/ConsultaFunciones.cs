@@ -37,16 +37,17 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void obtenerGeneros()
         {
-            cbGenero.DataSource = ConsultasData.ejecutarConsulta("Select * From Generos");
-            cbGenero.Items.Insert(0, "ELEJIR GENERO"); 
-            cbGenero.ValueMember = "COD_GENERO";
-            cbGenero.DisplayMember = "NOMBRE";
+           string query = "SELECT 0 as COD_GENERO,' Elejir Genero ' as NOMBRE\r\nunion\r\nSelect * From Generos";
+           cbGenero.DataSource = ConsultasData.ConsultaTablaRetorno(query);
+           cbGenero.ValueMember = "COD_GENERO";
+           cbGenero.DisplayMember = "NOMBRE";
         }
 
         private void obtenerFunciones()
         {   
-           cboFunciones.DataSource = ConsultasData.ejecutarSpParams("PA_OBT_FUNCIONES");
-           cboFunciones.Items.Insert(0, "");
+            //Realizo esto para agregar un registro vacio en la primera fila
+           string query = "SELECT 0 as COD_FUNCION,' Elejir Funcion ' as NOMBRE\r\nunion\r\nSELECT \r\nF.COD_FUNCION, P.NOMBRE + '-'+ convert(varchar, F.FECHA, 22) as NOMBRE\r\nFROM FUNCIONES F  \r\nJOIN PELICULAS P ON P.COD_PELICULA = F.COD_PELICULA";
+           cboFunciones.DataSource = ConsultasData.ConsultaTablaRetorno(query);
            cboFunciones.ValueMember = "COD_FUNCION";
            cboFunciones.DisplayMember = "NOMBRE";
         }
@@ -62,7 +63,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
             parametros.Add(new Parametros("@desde"  , dtpDesde.Value.ToString()));
             parametros.Add(new Parametros("@hasta"  , dtpHasta.Value.ToString()));
 
-            DataTable Resultado = ConsultasData.ejecutarSpParams("PA_REPORTE_ENTRADAS", parametros);
+            DataTable Resultado = ConsultasData.ConsultaTablaRetorno("PA_REPORTE_ENTRADAS", true, parametros);
             if (Resultado.Rows.Count > 0)
             {
                 if (!Resultado.Rows[0].ItemArray[0].ToString().Contains("La fecha desde no puede ser mayor a la fecha hasta"))
@@ -168,7 +169,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 stQuery += cbGenero.Text;
             try
             {
-                dgvResultados.DataSource = ConsultasData.ejecutarConsulta(stQuery, null);
+                dgvResultados.DataSource = ConsultasData.ConsultaTablaRetorno(stQuery);
             }
             catch 
             {

@@ -28,7 +28,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 gbTickets.Cursor = Cursors.Default;
                 gbFactura.Cursor = Cursors.Default;
                 obtenerCombos();
-                idFactura = ConsultasData.ReturnValueIntOFQuery("Select Max(F.COD_FACTURA)+1 FROM FACTURAS F");
+                idFactura = ConsultasData.ConsultaRetornaInt("Select Max(F.COD_FACTURA)+1 FROM FACTURAS F");
             }
 
             private void btnVolver_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
             private void obtenerClientes()
             {
-                DataTable lista = ConsultasData.ejecutarConsulta("PA_OBT_CLIENTES");
+                DataTable lista = ConsultasData.ConsultaTablaRetorno("PA_OBT_CLIENTES");
                 cboClientes.DataSource = lista;
                 cboClientes.ValueMember = "COD_CLIENTE";
                 cboClientes.DisplayMember = "NOMBRE";
@@ -56,7 +56,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
             private void obtenerVendedores()
             {
-                DataTable lista = ConsultasData.ejecutarConsulta("PA_OBT_VENDEDORES");
+                DataTable lista = ConsultasData.ConsultaTablaRetorno("PA_OBT_VENDEDORES");
                 cboVendedores.DataSource = lista;
                 cboVendedores.ValueMember = "COD_VENDEDOR";
                 cboVendedores.DisplayMember = "NOMBRE";
@@ -65,7 +65,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
             private void obtenerTiposVentas()
             {
-                DataTable lista = ConsultasData.ejecutarConsulta("PA_OBT_TIPO_V");
+                DataTable lista = ConsultasData.ConsultaTablaRetorno("PA_OBT_TIPO_V");
                 cboTipoVenta.DataSource = lista;
                 cboTipoVenta.ValueMember = "COD_TIPO_VENTA";
                 cboTipoVenta.DisplayMember = "NOMBRE";
@@ -73,7 +73,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
             private void obtenerFunciones()
             {
-                DataTable result = ConsultasData.ejecutarConsulta("PA_OBT_FUNCIONES");
+                DataTable result = ConsultasData.ConsultaTablaRetorno("PA_OBT_FUNCIONES");
                 cboFunciones.DataSource = result;
                 cboFunciones.ValueMember = "COD_FUNCION";
                 cboFunciones.DisplayMember = "NOMBRE";
@@ -82,7 +82,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
             private void obtenerSalas()
             {
                 AuxParametros.Add(new Parametros("@idFuncion", ((DataRowView)cboFunciones.SelectedItem).Row.ItemArray[0].ToString()));
-                DataTable result = ConsultasData.ejecutarSpParams("PA_OBT_SALA_X_FUNCION", AuxParametros);
+                DataTable result = ConsultasData.ConsultaTablaRetorno("PA_OBT_SALA_X_FUNCION",true, AuxParametros);
                 cboSalas.DataSource = result;
                 cboSalas.ValueMember = "cod_sala";
                 cboSalas.DisplayMember = "NOMBRE";
@@ -94,7 +94,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 AuxParametros.Clear();
                 AuxParametros.Add(new Parametros("@idFuncion", ((DataRowView)cboFunciones.SelectedItem).Row.ItemArray[0].ToString()));
                 AuxParametros.Add(new Parametros("@idSala", ((DataRowView)cboSalas.SelectedItem).Row.ItemArray[0].ToString()));
-                DataTable result = ConsultasData.ejecutarSpParams("PA_OBT_BUTACAS_DISPONIBLES", AuxParametros);
+                DataTable result = ConsultasData.ConsultaTablaRetorno("PA_OBT_BUTACAS_DISPONIBLES", true, AuxParametros);
                 cboButacasDisp.DataSource = result;
                 cboButacasDisp.ValueMember = "COD_BUTACA";
                 cboButacasDisp.DisplayMember = "NRO_BUTACA";
@@ -103,7 +103,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
             private void obtenerTiposClientes()
             {
-                DataTable result = ConsultasData.ejecutarConsulta("PA_OBT_TIPOS_C");
+                DataTable result = ConsultasData.ConsultaTablaRetorno("PA_OBT_TIPOS_C");
                 cboTipoCliente.DataSource = result;
                 foreach (DataRow row in result.Rows)
                 {
@@ -119,15 +119,14 @@ namespace Cine_App_2.Formularios.FormsConsultas
                String Cliente = ((DataRowView)cboClientes.SelectedItem).Row.ItemArray[0].ToString();
                String Vendedor = ((DataRowView)cboVendedores.SelectedItem).Row.ItemArray[0].ToString();
                String TipoVenta = ((DataRowView)cboTipoVenta.SelectedItem).Row.ItemArray[0].ToString();
-
         
-               AuxParametros.Add(new Parametros("@idCliente", Cliente, "int"));
-               AuxParametros.Add(new Parametros("@idVendedor", Vendedor, "int"));
-               AuxParametros.Add(new Parametros("@idTipoVenta", TipoVenta, "int"));
+               AuxParametros.Add(new Parametros("@idCliente", Cliente));
+               AuxParametros.Add(new Parametros("@idVendedor", Vendedor));
+               AuxParametros.Add(new Parametros("@idTipoVenta", TipoVenta));
 
                 try
                 {
-                ConsultasData.ejecutarSp("PA_REGISTRAR_FACTURA", AuxParametros);
+                ConsultasData.EjecutarSP("PA_REGISTRAR_FACTURA",true,  AuxParametros);
                     MessageBox.Show("Se Registro con exito el comprobante N°" + idFactura.ToString());
                 }
                 catch (Exception ex)
@@ -208,7 +207,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
                     cmd.Parameters.Add(mensaje);
                     cmd.Parameters.Add(idFacturaParam);
 
-                    DataTable result = ConsultasData.ejecutarSpParams("PA_REGISTRAR_TICKET", AuxParametros);
+                    DataTable result = ConsultasData.ConsultaTablaRetorno("PA_REGISTRAR_TICKET", true, AuxParametros);
 
                     DataRow row = result.Rows[0];
 
@@ -257,7 +256,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
             {
                 AuxParametros.Add(new Parametros("@idFactura", idFactura.ToString()));
 
-                DataTable impresion = ConsultasData.ejecutarSpParams("PA_IMPRIMIR_TICKET");
+                DataTable impresion = ConsultasData.ConsultaTablaRetorno("PA_IMPRIMIR_TICKET");
 
                 string nombrePelicula = impresion.Rows[0].ItemArray[0].ToString();
                 string fecha = impresion.Rows[0].ItemArray[1].ToString();
@@ -424,7 +423,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
     //    SqlParameter mensaje = new SqlParameter("@mensaje", SqlDbType.VarChar, 20);
     //    mensaje.Direction = System.Data.ParameterDirection.Output;
     //    cmd.Parameters.Add(mensaje);
-    //    ConsultasData.ejecutarSp("PA_REGISTRAR_FACTURA", cmd);
+    //    ConsultasData.EjecutarSP("PA_REGISTRAR_FACTURA", cmd);
     //    return idFactura.Value.ToString();
     //}
 

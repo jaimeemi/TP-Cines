@@ -41,7 +41,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
             parametro.Add(new Parametros("@DESDE", dtpDesde.Value.ToString()));
             parametro.Add(new Parametros("@HASTA", dtpHasta.Value.ToString()));
 
-            DataTable Resultado= ConsultasData.ejecutarSpParams("PA_TOTALES_POR_SEGMENTO_POR_PERIODO", parametro);
+            DataTable Resultado= ConsultasData.ConsultaTablaRetorno("PA_TOTALES_POR_SEGMENTO_POR_PERIODO", true, parametro);
             if (Resultado.Rows.Count > 0)
             {
                 DataRow row = Resultado.Rows[0];

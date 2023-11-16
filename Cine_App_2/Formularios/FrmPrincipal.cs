@@ -100,5 +100,12 @@ namespace Cine_App_2
             FrmReporteFunciones Reporte = new FrmReporteFunciones();
             Reporte.Show();
         }
+
+        private void consultaFunciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaFunciones con = new frmConsultaFunciones();
+            con.StartPosition = FormStartPosition.CenterParent;
+            con.Show();
+        }
     }
 }

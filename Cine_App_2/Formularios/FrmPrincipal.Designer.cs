@@ -35,14 +35,12 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaFuncionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaFunciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaciónFunciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaFunciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transacciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteFuncionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +51,6 @@
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.equipoDeDesarrolloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteFuncionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,37 +105,17 @@
             // soporteToolStripMenuItem
             // 
             this.soporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaFuncionToolStripMenuItem,
-            this.bajaFunciónToolStripMenuItem,
-            this.modificaciónFunciónToolStripMenuItem,
             this.consultaFunciónToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
             this.soporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
-            // altaFuncionToolStripMenuItem
-            // 
-            this.altaFuncionToolStripMenuItem.Name = "altaFuncionToolStripMenuItem";
-            this.altaFuncionToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.altaFuncionToolStripMenuItem.Text = "Alta_Función";
-            // 
-            // bajaFunciónToolStripMenuItem
-            // 
-            this.bajaFunciónToolStripMenuItem.Name = "bajaFunciónToolStripMenuItem";
-            this.bajaFunciónToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.bajaFunciónToolStripMenuItem.Text = "Baja_Función";
-            // 
-            // modificaciónFunciónToolStripMenuItem
-            // 
-            this.modificaciónFunciónToolStripMenuItem.Name = "modificaciónFunciónToolStripMenuItem";
-            this.modificaciónFunciónToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.modificaciónFunciónToolStripMenuItem.Text = "Modificación_Función";
-            // 
             // consultaFunciónToolStripMenuItem
             // 
             this.consultaFunciónToolStripMenuItem.Name = "consultaFunciónToolStripMenuItem";
-            this.consultaFunciónToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.consultaFunciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaFunciónToolStripMenuItem.Text = "Consulta_Función";
+            this.consultaFunciónToolStripMenuItem.Click += new System.EventHandler(this.consultaFunciónToolStripMenuItem_Click);
             // 
             // transacciónToolStripMenuItem
             // 
@@ -152,13 +129,13 @@
             // altaFacturaToolStripMenuItem
             // 
             this.altaFacturaToolStripMenuItem.Name = "altaFacturaToolStripMenuItem";
-            this.altaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaFacturaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.altaFacturaToolStripMenuItem.Text = "Alta_Factura";
             // 
             // consultaFacturaToolStripMenuItem
             // 
             this.consultaFacturaToolStripMenuItem.Name = "consultaFacturaToolStripMenuItem";
-            this.consultaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaFacturaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.consultaFacturaToolStripMenuItem.Text = "Consulta_Factura";
             // 
             // reportesToolStripMenuItem
@@ -168,6 +145,13 @@
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteFuncionesToolStripMenuItem
+            // 
+            this.reporteFuncionesToolStripMenuItem.Name = "reporteFuncionesToolStripMenuItem";
+            this.reporteFuncionesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.reporteFuncionesToolStripMenuItem.Text = "Reporte Funciones";
+            this.reporteFuncionesToolStripMenuItem.Click += new System.EventHandler(this.reporteFuncionesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -180,7 +164,7 @@
             // cargarToolStripMenuItem
             // 
             this.cargarToolStripMenuItem.Name = "cargarToolStripMenuItem";
-            this.cargarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.cargarToolStripMenuItem.Text = "Cargar";
             this.cargarToolStripMenuItem.Click += new System.EventHandler(this.cargarToolStripMenuItem_Click);
             // 
@@ -195,7 +179,7 @@
             // cargarToolStripMenuItem1
             // 
             this.cargarToolStripMenuItem1.Name = "cargarToolStripMenuItem1";
-            this.cargarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cargarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.cargarToolStripMenuItem1.Text = "Cargar";
             this.cargarToolStripMenuItem1.Click += new System.EventHandler(this.cargarToolStripMenuItem1_Click);
             // 
@@ -245,13 +229,6 @@
             this.equipoDeDesarrolloToolStripMenuItem.Text = "Equipo de desarrollo";
             this.equipoDeDesarrolloToolStripMenuItem.Click += new System.EventHandler(this.equipoDeDesarrolloToolStripMenuItem_Click);
             // 
-            // reporteFuncionesToolStripMenuItem
-            // 
-            this.reporteFuncionesToolStripMenuItem.Name = "reporteFuncionesToolStripMenuItem";
-            this.reporteFuncionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteFuncionesToolStripMenuItem.Text = "Reporte Funciones";
-            this.reporteFuncionesToolStripMenuItem.Click += new System.EventHandler(this.reporteFuncionesToolStripMenuItem_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,9 +264,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaFuncionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bajaFunciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificaciónFunciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaFunciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transacciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaFacturaToolStripMenuItem;
