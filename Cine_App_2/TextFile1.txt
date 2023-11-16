@@ -5,3 +5,573 @@ PASS VARCHAR(8)
 
 INSERT INTO USUARIOS (USUARIO, PASS)
 VALUES ('ADMIN','ADMIN');
+
+----
+------------------------------------------------------------------------------------
+CREATE DATABASE Cine_Grupo_15
+USE Cine_Grupo_15
+CREATE TABLE provincias
+(
+cod_provincia INT,
+nombre_provincia VARCHAR (100)
+CONSTRAINT pk_provincias PRIMARY KEY (cod_provincia)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE departamentos
+(
+cod_departamento INT,
+nombre_departamento VARCHAR (200),
+cod_provincia INT
+CONSTRAINT pk_departamentos PRIMARY KEY (cod_departamento),
+CONSTRAINT fk_departamentos_provincias FOREIGN KEY(cod_provincia)
+REFERENCES provincias(cod_provincia)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE localidades
+(
+cod_localidad INT,
+nombre_localidad VARCHAR (200),
+cod_departamento INT
+CONSTRAINT pk_localidades PRIMARY KEY (cod_localidad),
+CONSTRAINT fk_localidades_departamentos FOREIGN KEY(cod_departamento)
+REFERENCES departamentos (cod_departamento)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE barrios
+(
+cod_barrio INT,
+nombre_barrio VARCHAR (200),
+cod_localidad INT
+CONSTRAINT pk_barrios PRIMARY KEY (cod_barrio),
+CONSTRAINT fk_barrios_localidades FOREIGN KEY(cod_localidad)
+REFERENCES localidades(cod_localidad)
+)
+
+
+
+-------------------------------------------------------------------------------------
+CREATE TABLE tipos_docs
+(
+cod_tipo_doc INT,
+descripcion VARCHAR (100)
+CONSTRAINT pk_tipos_docs PRIMARY KEY (cod_tipo_doc)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE tipos_clientes 
+(
+cod_tipo_cliente INT,
+descripcion VARCHAR (100),
+precio DECIMAL (7,2)
+CONSTRAINT pk_tipos_clientes PRIMARY KEY (cod_tipo_cliente)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE clientes
+(
+cod_cliente INT,
+nombre VARCHAR (200),
+apellido VARCHAR (200),
+calle VARCHAR (200),
+nro_calle INT,
+cod_barrio INT,
+nro_doc VARCHAR(100),
+cod_tipo_doc INT,
+telefono VARCHAR (150),
+[e-mail] VARCHAR (300),
+cod_tipo_cliente INT
+CONSTRAINT pk_clientes PRIMARY KEY (cod_cliente),
+CONSTRAINT fk_clientes_barrios FOREIGN KEY (cod_barrio)
+REFERENCES barrios (cod_barrio),
+CONSTRAINT fk_clientes_tipos_docs FOREIGN KEY (cod_tipo_doc)
+REFERENCES tipos_docs (cod_tipo_doc),
+CONSTRAINT fk_clientes_tipos_clientes FOREIGN KEY (cod_tipo_cliente)
+REFERENCES tipos_clientes (cod_tipo_cliente)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE vendedores
+(
+cod_vendedor INT,
+nombre VARCHAR (200),
+apellido VARCHAR (200),
+calle VARCHAR (200),
+nro_calle INT,
+cod_barrio INT,
+nro_doc VARCHAR(100),
+cod_tipo_doc INT,
+telefono VARCHAR (150),
+[e-mail] VARCHAR (300),
+fecha_alta DATETIME
+CONSTRAINT pk_vendedores PRIMARY KEY (cod_vendedor),
+CONSTRAINT fk_vendedores_barrios FOREIGN KEY (cod_barrio)
+REFERENCES barrios (cod_barrio),
+CONSTRAINT fk_vendedores_tipos_docs FOREIGN KEY (cod_tipo_doc)
+REFERENCES tipos_docs (cod_tipo_doc)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE clasificaciones_inca
+(
+cod_clasificacion_inca INT,
+nombre VARCHAR(200),
+edad_adecuada_base INT
+CONSTRAINT pk_clasificaciones_inca PRIMARY KEY (cod_clasificacion_inca)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE generos
+(
+cod_genero INT,
+nombre VARCHAR(200),
+CONSTRAINT pk_generos PRIMARY KEY (cod_genero)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE idiomas
+(
+cod_idioma INT,
+nombre VARCHAR(50),
+CONSTRAINT pk_idiomas PRIMARY KEY (cod_idioma)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE peliculas
+(
+cod_pelicula INT,
+nombre VARCHAR (200),
+sinopsis VARCHAR (500),
+productora VARCHAR (150),
+cod_clasificacion_inca INT,
+cod_idioma INT,
+subtitulada BIT,
+CONSTRAINT pk_peliculas PRIMARY KEY (cod_pelicula),
+CONSTRAINT fk_peliculas_clasificaciones_inca FOREIGN KEY(cod_clasificacion_inca)
+REFERENCES clasificaciones_inca (cod_clasificacion_inca),
+CONSTRAINT fk_peliculas_idiomas FOREIGN KEY (cod_idioma)
+REFERENCES idiomas (cod_idioma)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE generos_peliculas
+(
+cod_genero_pelicula INT,
+cod_pelicula INT,
+cod_genero INT
+CONSTRAINT pk_generos_peliculas PRIMARY KEY (cod_genero_pelicula)
+CONSTRAINT fk_generos_peliculas_peliculas FOREIGN KEY (cod_pelicula)
+REFERENCES peliculas (cod_pelicula),
+CONSTRAINT pk_generos_peliculas_generos FOREIGN KEY (cod_genero)
+REFERENCES generos (cod_genero)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE tipos_salas
+(
+cod_tipo_sala INT,
+nombre VARCHAR (50),
+precio DECIMAL (7,2)
+CONSTRAINT pk_tipos_salas PRIMARY KEY (cod_tipo_sala)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE salas
+(
+cod_sala INT,
+nombre VARCHAR (50),
+cantidad_butacas INT,
+cod_tipo_sala INT
+CONSTRAINT pk_salas PRIMARY KEY (cod_sala),
+CONSTRAINT fk_salas_tipos_salas FOREIGN KEY (cod_tipo_sala)
+REFERENCES tipos_salas (cod_tipo_sala)
+)
+-------------------------------------------------------------------------------------
+
+
+CREATE TABLE butacas
+(
+cod_butaca INT,
+nro_butaca INT,
+cod_sala INT
+CONSTRAINT pk_butacas PRIMARY KEY (cod_butaca),
+CONSTRAINT fk_butacas_salas FOREIGN KEY (cod_sala)
+REFERENCES salas (cod_sala)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE funciones
+(
+cod_funcion INT,
+cod_pelicula INT,
+cod_sala INT,
+fecha DATETIME
+CONSTRAINT pk_funciones PRIMARY KEY (cod_funcion),
+CONSTRAINT fk_funciones_peliculas FOREIGN KEY (cod_pelicula)
+REFERENCES peliculas (cod_pelicula),
+CONSTRAINT fk_funciones_salas FOREIGN KEY (cod_sala)
+REFERENCES salas (cod_sala)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE reservas
+(
+cod_reserva INT,
+cod_funcion INT,
+cod_butaca INT,
+cod_cliente INT,
+fecha DATETIME
+CONSTRAINT pk_reservas PRIMARY KEY (cod_reserva),
+CONSTRAINT fk_reservas_funciones FOREIGN KEY (cod_funcion)
+REFERENCES funciones (cod_funcion),
+CONSTRAINT fk_reservas_butacas FOREIGN KEY (cod_butaca)
+REFERENCES butacas (cod_butaca),
+CONSTRAINT fk_reservas_cliente FOREIGN KEY (cod_cliente)
+REFERENCES clientes (cod_cliente)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE tipos_ventas
+(
+cod_tipo_venta INT,
+nombre VARCHAR (50)
+CONSTRAINT pk_tipos_ventas PRIMARY KEY (cod_tipo_venta)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE descuentos
+(
+cod_descuento INT,
+nombre VARCHAR (50),
+descuento DECIMAL (5,2),
+activo bit
+CONSTRAINT pk_descuentos PRIMARY KEY (cod_descuento)
+)
+-------------------------------------------------------------------------------------
+CREATE TABLE tickets
+(
+cod_ticket INT,
+cod_cliente INT,
+cod_vendedor INT,
+cod_tipo_venta INT,
+cod_descuento INT,
+fecha DATETIME
+CONSTRAINT pk_tickets PRIMARY KEY (cod_ticket),
+CONSTRAINT fk_tickets_clientes FOREIGN KEY (cod_cliente)
+REFERENCES clientes (cod_cliente),
+CONSTRAINT fk_tickets_vendedores FOREIGN KEY (cod_vendedor)
+REFERENCES vendedores (cod_vendedor),
+CONSTRAINT fk_tickets_tipos_ventas FOREIGN KEY (cod_tipo_venta)
+REFERENCES tipos_ventas (cod_tipo_venta),
+CONSTRAINT fk_tickets_descuentos FOREIGN KEY (cod_descuento)
+REFERENCES descuentos (cod_descuento)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE detalles_tickets_funciones
+(
+cod_detalle_ticket_funcion INT,
+cod_ticket INT,
+cod_funcion INT,
+cod_butaca INT,
+cod_reserva INT,
+precio DECIMAL (7,2)
+CONSTRAINT pk_detalles_tickets_funciones PRIMARY KEY (cod_detalle_ticket_funcion),
+CONSTRAINT fk_detalles_tickets_funciones_tickets FOREIGN KEY (cod_ticket)
+REFERENCES tickets (cod_ticket),
+CONSTRAINT fk_detalles_tickets_funciones_funciones FOREIGN KEY (cod_funcion)
+REFERENCES funciones (cod_funcion),
+CONSTRAINT fk_detalles_tickets_funciones_butacas FOREIGN KEY (cod_butaca)
+REFERENCES butacas (cod_butaca),
+CONSTRAINT fk_detalles_tickets_funciones_reservas FOREIGN KEY (cod_reserva)
+REFERENCES reservas (cod_reserva)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE formas_pagos
+(
+cod_forma_pago INT,
+descripcion VARCHAR (50)
+CONSTRAINT pk_formas_pagos PRIMARY KEY (cod_forma_pago)
+)
+-------------------------------------------------------------------------------------
+
+CREATE TABLE tickets_formas_pagos
+(
+cod_ticket_forma_pago INT,
+cod_ticket INT,
+cod_forma_pago INT,
+CONSTRAINT pk_tickets_formas_pagos PRIMARY KEY (cod_ticket_forma_pago),
+CONSTRAINT fk_tickets_formas_pagos_tickets FOREIGN KEY (cod_ticket)
+REFERENCES tickets (cod_ticket),
+CONSTRAINT fk_tickets_formas_pagos_formas_pagos FOREIGN KEY (cod_forma_pago)
+REFERENCES formas_pagos (cod_forma_pago)
+)
+
+
+--1) TABLA: PROVINCIAS
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (1,'Córdoba') 
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (2,'Buenos Aires')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (3,'Jujuy')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (4,'Catamarca')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (5,'Rio Negro')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (6,'Tierra del Fuego')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (7,'Tucuman')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (8,'La Rioja')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (9,'Salta')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (10,'La Pampa')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (11,'Chubut')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (12,'Mendoza')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (13,'Santa Cruz')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (14,'Neuquén')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (15,'San Luis')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (16,'Corrientes')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (17,'San Juan')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (18,'Santiago del Estero')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (19,'Chaco')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (20,'Misiones')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (21,'Entre Rios')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (22,'Formosa')
+INSERT INTO provincias (cod_provincia, nombre_provincia) VALUES (23,'Santa Fe')
+
+--2) TABLA DEPARTAMENTOS
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (1, 'CAPITAL', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (2, 'COLÓN', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (3, 'TOTORAL', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (4, 'TULUMBA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (5, 'SOBREMONTE', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (6, 'SANTA MARÍA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (7, 'CALAMUCHITA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (8, 'RÍO CUARTO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (9, 'GENERAL ROCA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (10, 'SAN JUSTO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (11,  'CRUZ DEL EJE', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (12,  'GENERAL SAN MARTÍN', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (13,  'ISCHILÍN', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (14,  'JUÁREZ CELMAN', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (15,  'MARCOS JUÁREZ', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (16,  ' MINAS', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (17,  ' POCHO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (18,  ' PRESIDENTE ROQUE SÁENZ PEÑA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (19,  ' PUNILLA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (20,  ' RIO PRIMERO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (21,  ' RIO SECO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (22,  ' RIO  SEGUNDO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (23,  ' RIO TERCERO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (24,  ' SAN ALBERTO', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (25,  ' SAN JAVIER', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (26,  ' TERCERO ARRIBA', 1)
+INSERT INTO DEPARTAMENTOS (cod_departamento, nombre_departamento, cod_provincia) VALUES (27,  'UNION', 1)
+
+
+--3) TABLA  LOCALIDADES  
+
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES (1, 'Córdoba', 1)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES (2, 'San Francisco' ,10)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES   (3, 'ArroyitO', 10 )
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES (4 ,'Sacanta', 10 )
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES   (5, 'Concepción', 10 )
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(6, 'Río Ceballos', 2)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(7, 'Unquillo', 2)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(8, 'Carlos Paz', 19)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(9, 'Villa María', 12)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(10, 'Cañada de Alvarez', 7)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(11, 'Cóndores', 7)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(12, 'Molinos', 7)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(13, 'Monsalvo', 7)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(14, 'Reartes', 7)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(15, 'Santa Rosa', 7)
+INSERT INTO LOCALIDADES  (cod_localidad, nombre_localidad, cod_departamento) VALUES(16, 'Rio de los Sauces', 7)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(17, 'Calera Norte', 2)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(18, 'Constitución', 2)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(19, 'Las Cañas', 2)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(19, 'San Vicente', 2)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(20, 'Candelaria', 11)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(21, 'Cruz del Eje', 11)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(22, 'Higueras', 11)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(23, 'Pichanas', 11)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(24, 'San Marcos', 11)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(25, 'El Cuero', 9)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(26, 'Italo', 9)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(27, 'Jagueles', 9)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(28, 'Necochea', 9)
+INSERT INTO LOCALIDADES (cod_localidad, nombre_localidad, cod_departamento) VALUES(29, 'Sarmiento', 9)
+
+--4) TABLA BARRIOS 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (1,'CENTRO',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (2,'ALTO ALBERDI',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (3,'OBSERVATORIO',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (4,'JARDÍN',1)
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (5,'GUEMES',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (6,'SAN MARTIN',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (7,'GENERAL PAZ',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (8,'NUEVA CORDOBA',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (9,'JUNIORS',1) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (9,'CATEDRAL',2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (10,'MAIPÚ',2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (11,'GOBERNADOR PIZARRO', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (12,'CORRAL DE BARRANCAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (13,'CENTRO', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (14,'Sarmiento', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (15,'JARDIN', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (16,'LA MILKA', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (17,'CONSOLATA', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (18,'9 DE SEPTIEMBRE', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (19,'2 HERMANOS', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (20,'LAS ROSAS', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (21,'INDEPENDENCIA', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (22,'VÉLEZ SARFIELD', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (23,'EL PRADO', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (24,'PARQUE', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (25,'CORRADI', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (26,'JOSÉ HERNÁNDEZ', 2) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (27,'ALTO ALEGRE', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (28,'FORCHIERI', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (29,'CIGARRALES A', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (30,'CIGARRALES B', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (31,'CIGARRALES C', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (32,'CIGARRALES DE SANTA ROSA', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (33,'IPV 20 VIVIENDAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (34,'IPV 34 VIVIENDAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (35,'LA LOMA', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (36,'LAS CORZUELAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (37,'LA PROVIDENCIA', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (38,'LAS ENSENADAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (39,'LAS HIGUERAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (40,'LAS MERCEDES', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (41,'LOMA DEL ZUPAY', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (42,'LAS TALITAS', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (43,'MUTUAL', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (44,'NORTE', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (45,'PARQUE SERRANO', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (46,'PROGRESO', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (47,'QUEBRADA HONDA', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (48,'RESIDENCIAL', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (49,'SAN CAYETANO', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (50,'SAN JOSÉ', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (51,'SPILIMBERGO', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (52,'VILLA AURORA', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (53,'VILLA DIAZ', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (54,'VILLA CABANA', 7) 
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (55,'VILLA HERBERA', 7)
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (56,'VILLA SAN MIGUEL', 7)
+INSERT INTO BARRIOS(cod_barrio, nombre_barrio, cod_localidad) VALUES (57,'VILLA TORTOSA', 7)
+
+
+--5) TABLA TIPOS DOCS 
+
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (1, 'LIBRETA CÍVICA')
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (2, 'LIBRETA DE ENROLAMIENTO')
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (3, 'LIBRETA VERDE')
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (4, 'LIBRETA CELESTE')
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (5, 'DNI TARJETA')
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (6, 'NUEVO DNI  DIGITAL')
+INSERT INTO TIPOS_DOCS (cod_tipo_doc, descripcion) VALUES (7, 'PASAPORTE')
+
+--6)TABLA TIPOS_CLIENTES
+INSERT INTO TIPOS_CLIENTES (cod_tipo_cliente, descripcion, precio) VALUES (1, 'MENOR',  750 )
+INSERT INTO TIPOS_CLIENTES (cod_tipo_cliente, descripcion, precio) VALUES (2, 'ADULTO',  1000 )
+INSERT INTO TIPOS_CLIENTES (cod_tipo_cliente, descripcion, precio) VALUES (3, 'JUBILADO',  700 )
+INSERT INTO CLIENTES (cod_cliente, nombre, apellido, calle, nro_calle, cod_barrio, nro_doc, cod_tipo_doc, telefono, [e-mail], cod_tipo_cliente) VALUES (1, 'Dolores', 'Pizarro', 'Libertad', 1535,  9, 37285289, 6, 3564621860,  'lolipizarrocaballero@gmail.com' , 2)
+
+
+
+
+--9) TABLA CLASIFICACIONES INCA 
+INSERT INTO CLASIFICACIONES_INCA (cod_clasificacion_inca, nombre, edad_adecuada_base) VALUES (1, 'ATP',  0)
+INSERT INTO CLASIFICACIONES_INCA (cod_clasificacion_inca, nombre, edad_adecuada_base) VALUES (2, '+13',  13)
+INSERT INTO CLASIFICACIONES_INCA (cod_clasificacion_inca, nombre, edad_adecuada_base) VALUES (3, '+16',  16)
+INSERT INTO CLASIFICACIONES_INCA (cod_clasificacion_inca, nombre, edad_adecuada_base) VALUES (3, '+18',  18)
+
+
+
+
+insert into idiomas (cod_idioma, nombre) values (1, 'Español')
+insert into idiomas (cod_idioma, nombre) values (2, 'Frances')
+insert into idiomas (cod_idioma, nombre) values (3, 'Italiano')
+insert into idiomas (cod_idioma, nombre) values (4, 'Aleman')
+insert into idiomas (cod_idioma, nombre) values (5, 'Ingles')
+insert into idiomas (cod_idioma, nombre) values (6, 'Hindi')
+insert into idiomas (cod_idioma, nombre) values (7, 'Portugués')
+insert into idiomas (cod_idioma, nombre) values (8, 'Chino')
+insert into idiomas (cod_idioma, nombre) values (9, 'Danes')
+insert into idiomas (cod_idioma, nombre) values (10, 'Árabe')
+insert into idiomas (cod_idioma, nombre) values (11, 'Japonés')
+insert into idiomas (cod_idioma, nombre) values (6, 'Bengala')
+insert into idiomas (cod_idioma, nombre) values (6, 'Guarani')
+insert into idiomas (cod_idioma, nombre) values (6, 'Quechua')
+
+
+
+
+--12) TABLA PELÍCULAS
+SELECT * From idiomas
+select * from clasificaciones_inca
+select * from peliculas
+
+INSERT INTO peliculas(cod_pelicula,nombre,sinopsis,productora,cod_clasificacion_inca,cod_idioma,subtitulada) VALUES (1,'The Avengers','Un enemigo inesperado amenaza con poner en peligro la seguridad mundial, así que Nick Fury, Director de la agencia internacional para el mantenimiento de la paz conocida con el nombre de SHIELD, necesita encontrar urgentemente un equipo que salve al mundo del mayor de los desastres','Marvel Studios',3,5,1)
+INSERT INTO peliculas(cod_pelicula,nombre,sinopsis,productora,cod_clasificacion_inca,cod_idioma,subtitulada) VALUES (2,'Moneyball','Billy Beane (Brad Pitt), gerente general de los Atléticos de Oakland, un día tiene una epifanía: la sabiduría convencional del béisbol está completamente equivocada. Enfrentado a un presupuesto ajustado, Beane debe reinventar su equipo burlando a los clubes de béisbol más ricos. Uniendo fuerzas con el graduado de la Ivy League Peter Brand (Jonah Hill)','Columbia Pictures',1,5,1)
+INSERT INTO peliculas(cod_pelicula,nombre,sinopsis,productora,cod_clasificacion_inca,cod_idioma,subtitulada) VALUES (3,'El secreto de sus ojos','Con la esperanza de poner fin a años de inquietud sobre un caso pasado, el investigador criminal retirado Benjamín Espósito (Ricardo Darín) comienza a escribir una novela basada en el misterio sin resolver de décadas de antigüedad de la violación y asesinato de un recién casado.','Haddock Films',2,1,1)
+INSERT INTO peliculas(cod_pelicula,nombre,sinopsis,productora,cod_clasificacion_inca,cod_idioma,subtitulada) VALUES (4,'Amigos intocables','La película narra la relación entre dos personajes totalmente opuestos y procedentes de entornos diferentes. Uno, Driss, un joven de origen senegalés, vive en un barrio obrero de París, con antecedentes penales, vitalista, descarado, divertido e irreflexivo; el otro, Phillippe, un rico tetrapléjico ya mayor, culto y muy poco espontáneo, que necesita un ayudante personal.','Gaumont Film Company',1,2,1)
+
+
+--13) TABLA GENEROS DE PELICULAS
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (1, 2,2)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (1, 2,3)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (4, 2,2)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (1, 3,2)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (5, 2,2)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (1, 4,5)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (4, 3,2)
+INSERT INTO generos_peliculas(cod_genero_pelicula ,cod_pelicula ,cod_genero) VALUES (2, 2,5)
+
+
+--14)TABLA TIPOS_SALAS
+INSERT INTO TIPOS_SALAS(cod_tipo_sala, nombre, precio) VALUES (1, '2D', 750)
+INSERT INTO TIPOS_SALAS(cod_tipo_sala, nombre, precio) VALUES (2, '3D', 900)
+INSERT INTO TIPOS_SALAS(cod_tipo_sala, nombre, precio) VALUES (3, '4D', 1000)
+
+
+--15)TABLA SALAS
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (1,'Uno', 30, 1) 
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (2,'Dos', 30, 1) 
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (3,'Tres', 30, 1) 
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (4,'Cuatro', 20, 2) 
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (5,'Cinco', 20, 2) 
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (6,'Seis', 20, 2 )
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (7,'Siete', 15, 3) 
+INSERT INTO salas(cod_sala,nombre, cantidad_butacas ,cod_tipo_sala) values (8,'Ocho', 15, 3) 
+
+--17)TABLA FUNCIONES
+select * from funciones
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(1,2,4,'02/02/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(1,2,3,'13/03/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(2,2,6,'30/04/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(2,3,10,'03/05/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(2,1,5,'06/06/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(3,1,1,'03/09/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(3,4,3,'09/09/2020')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(3,4,3,'14/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(4,1,2,'14/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(4,1,7,'15/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(6,3,5,'16/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(6,3,6,'17/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(6,2,3,'17/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(6,2,4,'17/02/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(6,4,3,'12/07/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(6,1,5,'13/07/2021')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(5,2,1,'12/02/2022')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(5,2,6,'12/02/2022')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(5,3,5,'13/02/2022')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(5,1,7,'13/02/2022')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(5,1,6,'13/02/2022')
+insert into funciones(cod_funcion,cod_pelicula,cod_sala,fecha) values(5,4,3,'15/02/2022')
+
+SELECT * FROM peliculas
+
+INSERT INTO FORMAS_PAGOS (cod_forma_pago , descripcion) VALUES (1, 'EFECTIVO')
+INSERT INTO FORMAS_PAGOS (cod_forma_pago , descripcion) VALUES (2, 'TARJETA DE CRÉDITO')
+INSERT INTO FORMAS_PAGOS (cod_forma_pago , descripcion) VALUES (3, 'TARJETA DE DÉBITO')
+INSERT INTO FORMAS_PAGOS (cod_forma_pago , descripcion) VALUES (4, 'TRANSFERENCIA BANCARIA')
