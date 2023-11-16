@@ -1,0 +1,300 @@
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\Juan\source\repos\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csprojAssemblyReference.cache
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\santi\Desktop\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\CINE_TERCER_ENTREGA\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csprojAssemblyReference.cache
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\santi\Desktop\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\ULTIMA_ACTUALIZ_CINE\entrega\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\LABORATORIOII_CINE_GRUPO_15\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csprojAssemblyReference.cache
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\santi\Desktop\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormEquipo.resources
+C:\Users\dolor\OneDrive\Escritorio\CINEMA_PROGII\cinefinal\Cine_App_2\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormLogin.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormEquipo.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormLogin.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\Juan\Desktop\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormEquipo.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormLogin.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form1.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form2.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form3.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form4.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form5.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form6.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\Juan\Desktop\Tecnicatura Programacion\TP Integrador\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.AssemblyReference.cache
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormEquipo.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormLogin.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Ticket.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.ConsultaFunciones.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FormsConsultas.Form7.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmClientes.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmPago.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.FrmPrincipal.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReserva.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Formularios.FrmReporteFunciones.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.Properties.Resources.resources
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.GenerateResource.cache
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe.config
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.exe
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Cine_App_2.pdb
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.WebDesign.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\EnvDTE.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\stdole.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\EnvDTE.xml
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.csproj.CopyComplete
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.exe
+C:\Users\Juan\Desktop\CINE\cine 2.0\Cine_App_2\Cine_App_2\obj\Debug\Cine_App_2.pdb
