@@ -55,7 +55,7 @@ namespace Cine_App_2
         //consulta 5
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            ConsultaFunciones form = new ConsultaFunciones();
+            frmConsultaFunciones form = new frmConsultaFunciones();
             form.descripcion = "Traer importe total y cantidad de entradas vendidas, entre un rango de fechas, por función";
             //form.consulta = "";//FALTA PONER
             form.Show();
