@@ -13,10 +13,10 @@ namespace Cine_App_2.Entidades
     {
         //public Reserva(int cod_reserva, int cod_funcion, int cod_butaca, int cod_cliente)
         //{
-        //    this.cod_reserva = cod_reserva;
-        //    this.cod_funcion = cod_funcion;
-        //    this.cod_butaca = cod_butaca;
-        //    this.cod_cliente = cod_cliente;
+        //    cod_reserva = cod_reserva;
+        //    cod_funcion = cod_funcion;
+        //    cod_butaca = cod_butaca;
+        //    cod_cliente = cod_cliente;
         //}
 
         //public int cod_reserva { get; set; }
