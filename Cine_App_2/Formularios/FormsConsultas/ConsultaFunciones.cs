@@ -111,8 +111,8 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void prNuevaFuncion()
         {
-            parametros.Add(new Parametros("@IDPelicula",txtPelicula.Text ));
-            parametros.Add(new Parametros("@IDSala", (((DataRowView)cbGenero.SelectedValue).Row.ItemArray[0].ToString())));
+           parametros.Add(new Parametros("@IDPelicula",txtPelicula.Text ));
+           parametros.Add(new Parametros("@IDSala", (((DataRowView)cbGenero.SelectedValue).Row.ItemArray[0].ToString())));
            try
             {
 
@@ -148,7 +148,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
                                                          MessageBoxIcon.Question);
             //bool resultado = ((bool)dialogResult);
         }
-
+        
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string stQuery = "Select ";
