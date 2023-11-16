@@ -85,13 +85,13 @@ namespace Cine_App_2.Formularios
                 }
                 else
                 {
-                   MessageBox.Show("Usuario o Contraseña Incorrectos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtUsuario.Text = "";
-                    txtPassword.Text = "";
-                    txtPassword_Leave(sender, e);
-                    txtUsuario_Leave(sender, e);
-                    btnIngresar.Focus();
-                    AuxParametros.Clear();
+                   //MessageBox.Show("Usuario o Contraseña Incorrectos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   // txtUsuario.Text = "";
+                   // txtPassword.Text = "";
+                   // txtPassword_Leave(sender, e);
+                   // txtUsuario_Leave(sender, e);
+                   // btnIngresar.Focus();
+                   // AuxParametros.Clear();
                 }
             }
             catch(Exception ex)
