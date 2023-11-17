@@ -91,5 +91,23 @@ namespace Cine_App_2.Datos
                 conexion.Close();
             }
         }
+
+        public static string ConsultaRetornaString(string nombreSp, bool boProcedure = false, List<Parametros> parametros = null)
+        {
+            comando = AbrirConexion(nombreSp, boProcedure, parametros);
+            try
+            {
+                var resultado = comando.ExecuteScalar();
+                return resultado.ToString();
+            }
+            catch (Exception e)
+            {
+                return "";
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
     }
 }

@@ -20,6 +20,13 @@ Join Salas S on s.COD_SALA = f.COD_SALA
 create or alter procedure prBorrarFuncion(@pIDFuncion int)
 as
 Begin try
+ Delete From TICKETS 
+ where COD_FUNCION = @pIDFuncion;
+
+  delete from RESERVAS 
+ where COD_FUNCION = @pIDFuncion;
+
+
  Delete From Funciones 
  where COD_FUNCION = @pIDFuncion;
 end try
@@ -27,3 +34,10 @@ begin catch
 	if @@TRANCOUNT = 0
 		THROW 
 end catch
+********************************************************************************************
+create or alter function fxSinopsisPeli( @IdPeli int)
+returns varchar(200)
+as
+BEGIN
+	return (Select sinopsis From Peliculas where COD_PELICULA = @IdPeli);
+END;

@@ -101,42 +101,20 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtPelicula.Text == "")
+            frmNuevaFuncion nf = new frmNuevaFuncion();
+            nf.StartPosition = FormStartPosition.CenterScreen;
+            nf.ShowDialog();
+            if (nf.GRABOFUNCION == false)
             {
-                MessageBox.Show("El Campo Genero No puede quedar vacio");
-                txtPelicula.Focus();
+                MessageBox.Show("No ha realizado una nueva funciona para proseguir! Verifique");
+                nf.ShowDialog();
             }
-            if (cboFunciones.SelectedIndex == 0)
-            {
-                MessageBox.Show("Debe asignar funciones apropiada");
-                cboFunciones.Focus();
-            }
-            if (cbGenero.SelectedIndex == 0)
-            {
-                MessageBox.Show("Debe indicar el genero de la pelicula");
-                cbGenero.Focus();  
-            }
-            try
-            {
-                prNuevaFuncion();
-            }catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            else
+                btnConsultar_Click(this, e);
         }
 
         private void prNuevaFuncion()
         {
-           parametros.Add(new Parametros("@IDPelicula",txtPelicula.Text ));
-           parametros.Add(new Parametros("@IDSala", (((DataRowView)cbGenero.SelectedValue).Row.ItemArray[0].ToString())));
-           try
-            {
-            
-            }
-            catch
-            {
-                throw;
-            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -146,8 +124,8 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 frmNuevaPelicula np = new frmNuevaPelicula();
                 np.Text = "Modificar Pelicula";
                 np.StartPosition = FormStartPosition.CenterScreen;
-                np.CodigoPelicula = (int)((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[1].Value;
-                np.CargarDatosPelicula();
+                np.CodigoPelicula = (int)((DataGridViewRow)dgvResultados.CurrentRow).Cells[2].Value;
+                np.CargarDatosPelicula( (DataGridViewRow)dgvResultados.CurrentRow );
                 np.Show();
             }
         }
@@ -158,34 +136,28 @@ namespace Cine_App_2.Formularios.FormsConsultas
             {
                 int idpelicula = (int)((DataGridViewRow)dgvResultados.Rows[0]).Cells[1].Value;
                 string NombreFuncion =
-                    ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[1].ToString() + " " +//Este es Nombre de la Pelicula
-                    ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[0].ToString() + " " + //Estas es la Fecha
-                    ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[7].ToString(); //Esta es la Sala
-                /*
-                 * bool resultado = MessageBox.Show("Confirma eliminar el registro: "+ f,
-                                                "Confirmacion de Eliminacion",
-                                                MessageBoxButtons.YesNo,
-                                                MessageBoxIcon.Question
-                                                );
-                */
-                DialogResult dialogResult = MessageBox.Show("Confirma eliminar el registro: " + NombreFuncion,
+                    ((DataGridViewRow)dgvResultados.CurrentRow).Cells[2].Value.ToString() + " " +//Este es Nombre de la Pelicula
+                    ((DataGridViewRow)dgvResultados.CurrentRow).Cells[0].Value.ToString() + " " + //Estas es la Fecha
+                    ((DataGridViewRow)dgvResultados.CurrentRow).Cells[7].Value.ToString(); //Esta es la Sala
+
+                DialogResult dialogResult = MessageBox.Show("Confirma eliminar la funcion: " + NombreFuncion,
                                                              "Confirmacion eliminacion",
                                                              MessageBoxButtons.YesNo,
                                                              MessageBoxIcon.Question);
 
-                if (((int)dialogResult) == 0)
+                if (dialogResult == DialogResult.Yes) 
                 {
-                    string a = ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[1].ToString();
+                    string a = ((DataGridViewRow)dgvResultados.CurrentRow).Cells[1].Value.ToString();
                     parametros.Add(new Parametros("@pIDFuncion", a ));
                     string query = "prBorrarFuncion";
                     try
                     {
                         ConsultasData.EjecutarSP(query, true, parametros);
+                        MessageBox.Show("El Registro ha sido eliminado con exito!");
                     }catch (Exception ex)
                     {
                         MessageBox.Show("Error durante la eliminacion de la funcion. Detalles tecnicos: "+ex.Message);
-                    }
-                    
+                    }                    
                 }
             }
         }

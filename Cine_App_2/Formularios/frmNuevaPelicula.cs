@@ -10,14 +10,46 @@ namespace Cine_App_2.Formularios
     {
         private List<Parametros> ls = new List<Parametros>();
         public int CodigoPelicula {  get; set; }
+        private bool Modificacion {  get; set; }
+
+        private PeliculaDAO pelicula;
         public frmNuevaPelicula()
         {
             InitializeComponent();
             prCargarCombos();
+            Modificacion = false;
         }
-        public void CargarDatosPelicula()
-        {
-
+        public void CargarDatosPelicula(DataGridViewRow datos)
+        {/*
+          * F.Fehca 0
+			P.COD_PELICULA,  1
+            P.NOMBRE as Pelicula 2
+            , P.PRODUCTORA, 3
+            P.SUBTITULADA, 4
+			 I.NOMBRE Idiom, 5
+            CI.NOMBRE INCA, 6
+			 S.NOMBRE as Sala , 7
+            S.CANTIDAD_BUTACAS  8
+			 G.COD_GENERO, 9 
+			 S.COD_SALA, 10
+			 I.COD_IDIOMA, 11
+			 F.COD_FUNCION 12
+          * 
+           datos.Cells[2].Value.ToString() + " " +//Este es Nombre de la Pelicula
+          */
+            ls.Add(new Parametros("@IdPeli", datos.Cells[1].Value.ToString()));
+            string sinopsis = ConsultasData.ConsultaRetornaString("fxSinopsisPeli ", false, ls);
+            pelicula = new PeliculaDAO(
+                (int)datos.Cells[1].Value, //Codigo pelicula
+                datos.Cells[2].Value.ToString(),//nombre
+                datos.Cells[3].Value.ToString(),// productora
+                sinopsis,// sinopsis
+                (int)datos.Cells[6].Value,// COD_CLASIFICACION_INCA
+                (int)datos.Cells[11].Value,//idioma
+                (bool)datos.Cells[4].Value//Subtitulada
+                );
+            Modificacion = true;
+            datos.Cells[7].Value.ToString();
         }
 
         private void prCargarCombos()
@@ -29,6 +61,8 @@ namespace Cine_App_2.Formularios
 
         private void CargarGeneros()
         {
+            string query = "select * from GENEROS ";// + (Modificacion ? " Where COD_GENERO = "+ : "");
+            
             cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("select * from GENEROS");
             cbgenero.DisplayMember = "NOMBRE";
             cbgenero.ValueMember = "COD_GENERO";
