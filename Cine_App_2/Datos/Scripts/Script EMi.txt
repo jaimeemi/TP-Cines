@@ -1,0 +1,29 @@
+﻿create or alter view vFunciones
+as
+Select convert(date, F.FECHA) as FECHA,
+			 P.COD_PELICULA, P.NOMBRE as Pelicula, P.PRODUCTORA, P.SUBTITULADA,
+			 I.NOMBRE Idioma,
+			 CI.NOMBRE INCA,
+			 S.NOMBRE as Sala ,S.CANTIDAD_BUTACAS  as 'Cantidad Butacas',
+			 G.COD_GENERO,
+			 S.COD_SALA,
+			 I.COD_IDIOMA,
+			 F.COD_FUNCION
+from funciones F
+Join Peliculas P on p.COD_PELICULA = f.COD_PELICULA
+join CLASIFICACIONES_INCA CI on CI.COD_CLASIFICACION_INCA = p.COD_CLASIFICACION_INCA
+join IDIOMAS I on I.COD_IDIOMA = p.COD_IDIOMA
+Join GENEROS_PELICULAS GP ON GP.COD_PELICULA = P.COD_PELICULA
+join Generos G On G.COD_GENERO = Gp.COD_GENERO
+Join Salas S on s.COD_SALA = f.COD_SALA
+********************************************************************************************
+create or alter procedure prBorrarFuncion(@pIDFuncion int)
+as
+Begin try
+ Delete From Funciones 
+ where COD_FUNCION = @pIDFuncion;
+end try
+begin catch
+	if @@TRANCOUNT = 0
+		THROW 
+end catch

@@ -1,23 +1,23 @@
 ﻿using Cine_App_2.Datos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cine_App_2.Formularios
 {
     public partial class frmNuevaPelicula : Form
     {
-        List<Parametros> ls = new List<Parametros>();
+        private List<Parametros> ls = new List<Parametros>();
+        public int CodigoPelicula {  get; set; }
         public frmNuevaPelicula()
         {
             InitializeComponent();
             prCargarCombos();
+        }
+        public void CargarDatosPelicula()
+        {
+
         }
 
         private void prCargarCombos()
@@ -29,21 +29,21 @@ namespace Cine_App_2.Formularios
 
         private void CargarGeneros()
         {
-            cbgenero.DataSource = ConsultasData.ejecutarConsulta("select * from GENEROS");
+            cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("select * from GENEROS");
             cbgenero.DisplayMember = "NOMBRE";
             cbgenero.ValueMember = "COD_GENERO";
         }
         
         private void CargarIdiomas()
         {
-            cbgenero.DataSource = ConsultasData.ejecutarConsulta("select * from IDIOMAS");
+            cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("select * from IDIOMAS");
             cbgenero.DisplayMember = "NOMBRE";
             cbgenero.ValueMember = "COD_IDIOMA";
         }
 
         private void CargaINCA()
         {
-            cbgenero.DataSource = ConsultasData.ejecutarConsulta("Select * from CLASIFICACIONES_INCA");
+            cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("Select * from CLASIFICACIONES_INCA");
             cbgenero.DisplayMember = "NOMBRE";
             cbgenero.ValueMember = "COD_IDIOMA";
         }
@@ -98,7 +98,7 @@ namespace Cine_App_2.Formularios
 
             try
             {
-                ConsultasData.EjecutalSP("spNuevaPelicula", true, ls);
+                ConsultasData.EjecutarSP("spNuevaPelicula", true, ls);
                 MessageBox.Show("Nueva Pelicula Grabada con Exito!");
                 Dispose();
             }

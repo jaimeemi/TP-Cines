@@ -13,9 +13,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 {
     public partial class frmConsultaFunciones : Form
     {
-        List<Parametros> parametros = new List<Parametros>();
-        public string descripcion;
-        public string nombreSp;
+        private List<Parametros> parametros = new List<Parametros>();
         
         public frmConsultaFunciones()
         {
@@ -25,7 +23,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = descripcion;
+            dtpDesde.Value = DateTime.Parse("01/01/2000");
             dtpHasta.Value = DateTime.Today;
 
         }
@@ -33,6 +31,24 @@ namespace Cine_App_2.Formularios.FormsConsultas
         {
             obtenerFunciones();
             obtenerGeneros();
+            ObtenerSalas();
+            ObtenerIdiomas();
+        }
+
+        private void ObtenerIdiomas()
+        {
+            string query = "Select 0 as COD_IDIOMA,  ' '  as Nombre\r\nFrom IDIOMAS \r\nunion\r\nSelect COD_IDIOMA,  Nombre\r\nFrom IDIOMAS ";
+            cbIdiomas.DataSource = ConsultasData.ConsultaTablaRetorno(query);
+            cbIdiomas.ValueMember = "COD_IDIOMA";
+            cbIdiomas.DisplayMember = "NOMBRE";
+        }
+
+        private void ObtenerSalas()
+        {
+            string query = "Select 0 as COD_SALA,  ' '  as Nombre\r\nFrom Salas s\r\nunion\r\nSelect COD_SALA,  Nombre\r\nFrom Salas s\r\n";
+            cbSalas.DataSource = ConsultasData.ConsultaTablaRetorno(query);
+            cbSalas.ValueMember = "COD_SALA";
+            cbSalas.DisplayMember = "NOMBRE";
         }
 
         private void obtenerGeneros()
@@ -45,7 +61,6 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void obtenerFunciones()
         {   
-            //Realizo esto para agregar un registro vacio en la primera fila
            string query = "SELECT 0 as COD_FUNCION,' Elejir Funcion ' as NOMBRE\r\nunion\r\nSELECT \r\nF.COD_FUNCION, P.NOMBRE + '-'+ convert(varchar, F.FECHA, 22) as NOMBRE\r\nFROM FUNCIONES F  \r\nJOIN PELICULAS P ON P.COD_PELICULA = F.COD_PELICULA";
            cboFunciones.DataSource = ConsultasData.ConsultaTablaRetorno(query);
            cboFunciones.ValueMember = "COD_FUNCION";
@@ -57,6 +72,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
             Dispose();
         }
 
+        /*
         private void button1_Click(object sender, EventArgs e)
         {
             parametros.Add(new Parametros("@funcion", (((DataRowView)cboFunciones.SelectedValue).Row.ItemArray[0].ToString())));
@@ -81,6 +97,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
             }
  
         }
+        */
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -106,7 +123,6 @@ namespace Cine_App_2.Formularios.FormsConsultas
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void prNuevaFuncion()
@@ -115,7 +131,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
            parametros.Add(new Parametros("@IDSala", (((DataRowView)cbGenero.SelectedValue).Row.ItemArray[0].ToString())));
            try
             {
-
+            
             }
             catch
             {
@@ -125,51 +141,80 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmNuevaPelicula np = new frmNuevaPelicula();
-            np.Text = "Modificar Pelicula";
-            np.StartPosition = FormStartPosition.CenterScreen;
-            np.Show();
+            if (dgvResultados.Rows.Count != 0)
+            {
+                frmNuevaPelicula np = new frmNuevaPelicula();
+                np.Text = "Modificar Pelicula";
+                np.StartPosition = FormStartPosition.CenterScreen;
+                np.CodigoPelicula = (int)((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[1].Value;
+                np.CargarDatosPelicula();
+                np.Show();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DataGridViewCell f = dgvResultados.CurrentCell = this.dgvResultados[1, 0];
-            f = dgvResultados[1, 0];
-            /*
-             * bool resultado = MessageBox.Show("Confirma eliminar el registro: "+ f,
-                                            "Confirmacion de Eliminacion",
-                                            MessageBoxButtons.YesNo,
-                                            MessageBoxIcon.Question
-                                            );
-            */
-            DialogResult dialogResult = MessageBox.Show("Confirma eliminar el registro: " + f.ToString(),
-                                                         "Confirmacion eliminacion",
-                                                         MessageBoxButtons.YesNo,
-                                                         MessageBoxIcon.Question);
-            //bool resultado = ((bool)dialogResult);
+            if (dgvResultados.Rows.Count != 0)
+            {
+                int idpelicula = (int)((DataGridViewRow)dgvResultados.Rows[0]).Cells[1].Value;
+                string NombreFuncion =
+                    ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[1].ToString() + " " +//Este es Nombre de la Pelicula
+                    ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[0].ToString() + " " + //Estas es la Fecha
+                    ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[7].ToString(); //Esta es la Sala
+                /*
+                 * bool resultado = MessageBox.Show("Confirma eliminar el registro: "+ f,
+                                                "Confirmacion de Eliminacion",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question
+                                                );
+                */
+                DialogResult dialogResult = MessageBox.Show("Confirma eliminar el registro: " + NombreFuncion,
+                                                             "Confirmacion eliminacion",
+                                                             MessageBoxButtons.YesNo,
+                                                             MessageBoxIcon.Question);
+
+                if (((int)dialogResult) == 0)
+                {
+                    string a = ((DataGridViewRow)dgvResultados.SelectedRows[dgvResultados.CurrentRow.Index]).Cells[1].ToString();
+                    parametros.Add(new Parametros("@pIDFuncion", a ));
+                    string query = "prBorrarFuncion";
+                    try
+                    {
+                        ConsultasData.EjecutarSP(query, true, parametros);
+                    }catch (Exception ex)
+                    {
+                        MessageBox.Show("Error durante la eliminacion de la funcion. Detalles tecnicos: "+ex.Message);
+                    }
+                    
+                }
+            }
         }
         
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string stQuery = "Select ";
-            string stNExo = " Where ";
+            string stQuery = "Select * From vFunciones";
 
-            stQuery += dtpDesde.Value.ToString() + dtpHasta.Value.ToString();
+            stQuery += " Where FECHA >= '"+dtpDesde.Value.ToString()+"' And FECHA <= '"+ dtpHasta.Value.ToString()+"'";
             if (txtPelicula.Text != "")
-            {
-                stQuery += txtPelicula.Text;
-                stNExo += " AND ";
-            }
+                stQuery += " AND PELICULA like Upper('"+txtPelicula.Text+"%')";
             if (cboFunciones.SelectedIndex != 0)
-            {
-                stQuery += cboFunciones.Text;
-                stNExo += " AND ";
-            }
+                stQuery += " AND COD_FUNCION = " + cboFunciones.SelectedIndex;
             if (cbGenero.SelectedIndex != 0)
-                stQuery += cbGenero.Text;
+                stQuery += " AND COD_GENERO = "+cbGenero.SelectedIndex;
+            if (cbSalas.SelectedIndex != 0)
+                stQuery += " AND COD_SALA = " + cbSalas.SelectedIndex;
+            if (cbIdiomas.SelectedIndex != 0)
+                stQuery += " AND COD_IDIOMA = " + cbIdiomas.SelectedIndex;
+
             try
             {
                 dgvResultados.DataSource = ConsultasData.ConsultaTablaRetorno(stQuery);
+                //Escondo columnas Solo son usadas para filtrar
+                dgvResultados.Columns["COD_PELICULA"].Visible = false;
+                dgvResultados.Columns["COD_FUNCION"].Visible = false;
+                dgvResultados.Columns["COD_GENERO"].Visible = false;
+                dgvResultados.Columns["COD_SALA"].Visible = false;
+                dgvResultados.Columns["COD_IDIOMA"].Visible = false;
             }
             catch 
             {
