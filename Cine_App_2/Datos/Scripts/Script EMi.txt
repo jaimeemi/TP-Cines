@@ -17,27 +17,84 @@ Join GENEROS_PELICULAS GP ON GP.COD_PELICULA = P.COD_PELICULA
 join Generos G On G.COD_GENERO = Gp.COD_GENERO
 Join Salas S on s.COD_SALA = f.COD_SALA
 ********************************************************************************************
-create or alter procedure prBorrarFuncion(@pIDFuncion int)
+create or alter procedure prBorrarFuncion
+(
+	@pIDFuncion int
+)
 as
 Begin try
+ 
  Delete From TICKETS 
  where COD_FUNCION = @pIDFuncion;
 
-  delete from RESERVAS 
+ Delete from RESERVAS 
  where COD_FUNCION = @pIDFuncion;
 
 
  Delete From Funciones 
  where COD_FUNCION = @pIDFuncion;
+
 end try
 begin catch
 	if @@TRANCOUNT = 0
 		THROW 
 end catch
 ********************************************************************************************
-create or alter function fxSinopsisPeli( @IdPeli int)
-returns varchar(200)
+create or alter procedure spNuevaPelicula
+(
+	@Nombre varchar(50),
+	@Sinopsis varchar(200),
+	@Productora varchar(50),
+	@Clasificacion int,
+	@Idioma int,
+	@Subtitulada int
+)
+as 
+BEGIN
+	BEGIN TRY
+		INSERT INTO PELICULAS (Nombre,Sinopsis,PRODUCTORA,COD_CLASIFICACION_INCA,COD_IDIOMA,Subtitulada)
+				VALUES (@Nombre,
+						@Sinopsis,
+						@Productora,
+						@Clasificacion,
+						@Idioma,
+						@Subtitulada
+					   );
+	END TRY
+	BEGIN CATCH
+		IF (@@TRANCOUNT = 0)
+			SELECT 'Error Grabando Pelicula';
+	END CATCH
+END;
+********************************************************************************************
+create or alter procedure spNuevaFuncion 
+(
+	@IDPelicula int,
+	@IDSala int
+)
+as
+BEGIN
+	INSERT INTO FUNCIONES ( COD_PELICULA, COD_SALA, FECHA )
+			 VALUES (@IDPelicula,
+							 @IDSala,
+							 CURRENT_TIMESTAMP
+							)
+END;
+********************************************************************************************
+create or alter function fxSinopsisPeli
+( 
+	@IdPeli int
+)
+	returns varchar(200)
 as
 BEGIN
 	return (Select sinopsis From Peliculas where COD_PELICULA = @IdPeli);
 END;
+********************************************************************************************
+-- PARA REPORTE
+Select Sum(T.PRECIO) as TOTAL, Sum(TC.PRECIO) As 'Precio 2',
+			 TC.COD_TIPO_CLIENTE
+From Tickets T
+left Join TIPOS_CLIENTES TC ON TC.COD_TIPO_CLIENTE = T.COD_TIPO_CLIENTE
+Group by TC.COD_TIPO_CLIENTE
+
