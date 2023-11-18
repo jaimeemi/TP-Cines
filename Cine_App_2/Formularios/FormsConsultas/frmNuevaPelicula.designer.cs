@@ -37,6 +37,8 @@
             this.lblInca = new System.Windows.Forms.Label();
             this.chSubtitulada = new System.Windows.Forms.CheckBox();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.cbgenero = new System.Windows.Forms.ComboBox();
+            this.lblGenero = new System.Windows.Forms.Label();
             this.cbIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.txtProductora = new System.Windows.Forms.TextBox();
@@ -96,7 +98,7 @@
             this.cbINCA.Location = new System.Drawing.Point(333, 71);
             this.cbINCA.Name = "cbINCA";
             this.cbINCA.Size = new System.Drawing.Size(227, 21);
-            this.cbINCA.TabIndex = 3;
+            this.cbINCA.TabIndex = 4;
             // 
             // lblInca
             // 
@@ -125,25 +127,44 @@
             this.btnGrabar.Location = new System.Drawing.Point(333, 155);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(227, 46);
-            this.btnGrabar.TabIndex = 7;
+            this.btnGrabar.TabIndex = 6;
             this.btnGrabar.Text = "GRABAR";
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
+            // cbgenero
+            // 
+            this.cbgenero.FormattingEnabled = true;
+            this.cbgenero.Location = new System.Drawing.Point(333, 111);
+            this.cbgenero.Name = "cbgenero";
+            this.cbgenero.Size = new System.Drawing.Size(227, 21);
+            this.cbgenero.TabIndex = 35;
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblGenero.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblGenero.Location = new System.Drawing.Point(330, 95);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(45, 13);
+            this.lblGenero.TabIndex = 36;
+            this.lblGenero.Text = "Genero:";
+            // 
             // cbIdioma
             // 
             this.cbIdioma.FormattingEnabled = true;
-            this.cbIdioma.Location = new System.Drawing.Point(333, 111);
+            this.cbIdioma.Location = new System.Drawing.Point(465, 135);
             this.cbIdioma.Name = "cbIdioma";
-            this.cbIdioma.Size = new System.Drawing.Size(227, 21);
-            this.cbIdioma.TabIndex = 6;
+            this.cbIdioma.Size = new System.Drawing.Size(95, 21);
+            this.cbIdioma.TabIndex = 37;
             // 
             // lblIdioma
             // 
             this.lblIdioma.AutoSize = true;
             this.lblIdioma.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblIdioma.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIdioma.Location = new System.Drawing.Point(330, 95);
+            this.lblIdioma.Location = new System.Drawing.Point(418, 138);
             this.lblIdioma.Name = "lblIdioma";
             this.lblIdioma.Size = new System.Drawing.Size(41, 13);
             this.lblIdioma.TabIndex = 38;
@@ -154,7 +175,7 @@
             this.txtProductora.Location = new System.Drawing.Point(333, 24);
             this.txtProductora.Name = "txtProductora";
             this.txtProductora.Size = new System.Drawing.Size(227, 20);
-            this.txtProductora.TabIndex = 2;
+            this.txtProductora.TabIndex = 39;
             // 
             // frmNuevaPelicula
             // 
@@ -165,6 +186,8 @@
             this.Controls.Add(this.txtProductora);
             this.Controls.Add(this.cbIdioma);
             this.Controls.Add(this.lblIdioma);
+            this.Controls.Add(this.cbgenero);
+            this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.chSubtitulada);
             this.Controls.Add(this.cbINCA);
@@ -191,6 +214,8 @@
         private System.Windows.Forms.Label lblInca;
         private System.Windows.Forms.CheckBox chSubtitulada;
         private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.ComboBox cbgenero;
+        private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.ComboBox cbIdioma;
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.TextBox txtProductora;

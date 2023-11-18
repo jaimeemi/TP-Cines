@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbSalas = new System.Windows.Forms.ComboBox();
+            this.lblSalas = new System.Windows.Forms.Label();
+            this.cbIdiomas = new System.Windows.Forms.ComboBox();
+            this.lblIdioma = new System.Windows.Forms.Label();
             this.btnNuevaPeliucla = new System.Windows.Forms.Button();
             this.cbGenero = new System.Windows.Forms.ComboBox();
             this.lblPelicula = new System.Windows.Forms.Label();
@@ -44,15 +48,9 @@
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.LblFunciones = new System.Windows.Forms.Label();
-            this.cboFunciones = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.cbIdiomas = new System.Windows.Forms.ComboBox();
-            this.lblIdioma = new System.Windows.Forms.Label();
-            this.cbSalas = new System.Windows.Forms.ComboBox();
-            this.lblSalas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,14 +61,14 @@
             this.dgvResultados.AllowUserToDeleteRows = false;
             this.dgvResultados.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResultados.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResultados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResultados.Location = new System.Drawing.Point(0, 98);
             this.dgvResultados.MultiSelect = false;
             this.dgvResultados.Name = "dgvResultados";
@@ -117,13 +115,47 @@
             this.panel1.Controls.Add(this.lblFechaDesde);
             this.panel1.Controls.Add(this.dtpHasta);
             this.panel1.Controls.Add(this.dtpDesde);
-            this.panel1.Controls.Add(this.LblFunciones);
-            this.panel1.Controls.Add(this.cboFunciones);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(941, 92);
             this.panel1.TabIndex = 15;
+            // 
+            // cbSalas
+            // 
+            this.cbSalas.FormattingEnabled = true;
+            this.cbSalas.Location = new System.Drawing.Point(525, 16);
+            this.cbSalas.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSalas.Name = "cbSalas";
+            this.cbSalas.Size = new System.Drawing.Size(121, 21);
+            this.cbSalas.TabIndex = 31;
+            // 
+            // lblSalas
+            // 
+            this.lblSalas.AutoSize = true;
+            this.lblSalas.Location = new System.Drawing.Point(523, 3);
+            this.lblSalas.Name = "lblSalas";
+            this.lblSalas.Size = new System.Drawing.Size(36, 13);
+            this.lblSalas.TabIndex = 30;
+            this.lblSalas.Text = "Salas:";
+            // 
+            // cbIdiomas
+            // 
+            this.cbIdiomas.FormattingEnabled = true;
+            this.cbIdiomas.Location = new System.Drawing.Point(663, 16);
+            this.cbIdiomas.Margin = new System.Windows.Forms.Padding(2);
+            this.cbIdiomas.Name = "cbIdiomas";
+            this.cbIdiomas.Size = new System.Drawing.Size(121, 21);
+            this.cbIdiomas.TabIndex = 29;
+            // 
+            // lblIdioma
+            // 
+            this.lblIdioma.AutoSize = true;
+            this.lblIdioma.Location = new System.Drawing.Point(660, 2);
+            this.lblIdioma.Name = "lblIdioma";
+            this.lblIdioma.Size = new System.Drawing.Size(41, 13);
+            this.lblIdioma.TabIndex = 28;
+            this.lblIdioma.Text = "Idioma:";
             // 
             // btnNuevaPeliucla
             // 
@@ -139,10 +171,10 @@
             // cbGenero
             // 
             this.cbGenero.FormattingEnabled = true;
-            this.cbGenero.Location = new System.Drawing.Point(547, 18);
+            this.cbGenero.Location = new System.Drawing.Point(345, 17);
             this.cbGenero.Margin = new System.Windows.Forms.Padding(2);
             this.cbGenero.Name = "cbGenero";
-            this.cbGenero.Size = new System.Drawing.Size(121, 21);
+            this.cbGenero.Size = new System.Drawing.Size(156, 21);
             this.cbGenero.TabIndex = 26;
             // 
             // lblPelicula
@@ -174,7 +206,7 @@
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
-            this.lblGenero.Location = new System.Drawing.Point(545, 3);
+            this.lblGenero.Location = new System.Drawing.Point(343, 2);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(45, 13);
             this.lblGenero.TabIndex = 21;
@@ -230,25 +262,6 @@
             this.dtpDesde.Size = new System.Drawing.Size(202, 20);
             this.dtpDesde.TabIndex = 3;
             // 
-            // LblFunciones
-            // 
-            this.LblFunciones.AutoSize = true;
-            this.LblFunciones.Location = new System.Drawing.Point(338, 3);
-            this.LblFunciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblFunciones.Name = "LblFunciones";
-            this.LblFunciones.Size = new System.Drawing.Size(45, 13);
-            this.LblFunciones.TabIndex = 15;
-            this.LblFunciones.Text = "Función";
-            // 
-            // cboFunciones
-            // 
-            this.cboFunciones.FormattingEnabled = true;
-            this.cboFunciones.Location = new System.Drawing.Point(341, 18);
-            this.cboFunciones.Margin = new System.Windows.Forms.Padding(2);
-            this.cboFunciones.Name = "cboFunciones";
-            this.cboFunciones.Size = new System.Drawing.Size(202, 21);
-            this.cboFunciones.TabIndex = 1;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.DodgerBlue;
@@ -284,42 +297,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // cbIdiomas
-            // 
-            this.cbIdiomas.FormattingEnabled = true;
-            this.cbIdiomas.Location = new System.Drawing.Point(547, 60);
-            this.cbIdiomas.Margin = new System.Windows.Forms.Padding(2);
-            this.cbIdiomas.Name = "cbIdiomas";
-            this.cbIdiomas.Size = new System.Drawing.Size(121, 21);
-            this.cbIdiomas.TabIndex = 29;
-            // 
-            // lblIdioma
-            // 
-            this.lblIdioma.AutoSize = true;
-            this.lblIdioma.Location = new System.Drawing.Point(545, 45);
-            this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(41, 13);
-            this.lblIdioma.TabIndex = 28;
-            this.lblIdioma.Text = "Idioma:";
-            // 
-            // cbSalas
-            // 
-            this.cbSalas.FormattingEnabled = true;
-            this.cbSalas.Location = new System.Drawing.Point(672, 18);
-            this.cbSalas.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSalas.Name = "cbSalas";
-            this.cbSalas.Size = new System.Drawing.Size(121, 21);
-            this.cbSalas.TabIndex = 31;
-            // 
-            // lblSalas
-            // 
-            this.lblSalas.AutoSize = true;
-            this.lblSalas.Location = new System.Drawing.Point(670, 3);
-            this.lblSalas.Name = "lblSalas";
-            this.lblSalas.Size = new System.Drawing.Size(36, 13);
-            this.lblSalas.TabIndex = 30;
-            this.lblSalas.Text = "Salas:";
             // 
             // frmConsultaFunciones
             // 
@@ -358,8 +335,6 @@
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
-        private System.Windows.Forms.Label LblFunciones;
-        private System.Windows.Forms.ComboBox cboFunciones;
         private System.Windows.Forms.CheckBox chSubtitulada;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.Button btnAgregar;

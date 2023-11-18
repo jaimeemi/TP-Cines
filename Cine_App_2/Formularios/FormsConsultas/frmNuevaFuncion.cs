@@ -26,7 +26,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void ObtenerSalas()
         {
-            string query = "Select 0 as COD_SALA,  ' '  as Nombre\r\nFrom Salas s\r\nunion\r\nSelect COD_SALA,  Nombre\r\nFrom Salas s\r\n";
+            string query = "Select 0 as COD_SALA,  ' '  as Nombre From Salas union Select COD_SALA,  Nombre From Salas";
             cbSala.DataSource = ConsultasData.ConsultaTablaRetorno(query);
             cbSala.ValueMember = "COD_SALA";
             cbSala.DisplayMember = "NOMBRE";
@@ -34,10 +34,10 @@ namespace Cine_App_2.Formularios.FormsConsultas
 
         private void ObtenerPeliculas()
         {
-            string query = "select 0 as COD_PELICULA, ' elejir pelicula' as Nombre\r\nunion \r\nselect COD_PELICULA, Nombre\r\nfrom peliculas";
-            cbSala.DataSource = ConsultasData.ConsultaTablaRetorno(query);
-            cbSala.ValueMember = "COD_SALA";
-            cbSala.DisplayMember = "NOMBRE";
+            string query = "select 0 as COD_PELICULA, ' elejir pelicula' as Nombre union select COD_PELICULA, Nombre from peliculas";
+            cbPelicula.DataSource = ConsultasData.ConsultaTablaRetorno(query);
+            cbPelicula.ValueMember = "COD_PELICULA";
+            cbPelicula.DisplayMember = "NOMBRE";
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -52,8 +52,11 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 MessageBox.Show("Debe selecciona una sala");
                 cbSala.Focus();
             }
-
-            DialogResult dialogResult = MessageBox.Show("Confirma la funcion: ",
+            
+            string NombreFUncion = ((DataRowView)cbPelicula.Items[cbPelicula.SelectedIndex]).Row.ItemArray[1] + " "+
+                                   dtpDesde.Value.ToString() + " " +
+                                   ((DataRowView)cbSala.Items[cbSala.SelectedIndex]).Row.ItemArray[1];
+            DialogResult dialogResult = MessageBox.Show("Confirma la funcion: " + NombreFUncion,
                                                         "Confirmar",
                                                         MessageBoxButtons.YesNo,
                                                         MessageBoxIcon.Question);

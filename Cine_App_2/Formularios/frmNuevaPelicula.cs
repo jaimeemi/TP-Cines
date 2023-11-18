@@ -20,23 +20,7 @@ namespace Cine_App_2.Formularios
             Modificacion = false;
         }
         public void CargarDatosPelicula(DataGridViewRow datos)
-        {/*
-          * F.Fehca 0
-			P.COD_PELICULA,  1
-            P.NOMBRE as Pelicula 2
-            , P.PRODUCTORA, 3
-            P.SUBTITULADA, 4
-			 I.NOMBRE Idiom, 5
-            CI.NOMBRE INCA, 6
-			 S.NOMBRE as Sala , 7
-            S.CANTIDAD_BUTACAS  8
-			 G.COD_GENERO, 9 
-			 S.COD_SALA, 10
-			 I.COD_IDIOMA, 11
-			 F.COD_FUNCION 12
-          * 
-           datos.Cells[2].Value.ToString() + " " +//Este es Nombre de la Pelicula
-          */
+        {
             ls.Add(new Parametros("@IdPeli", datos.Cells[1].Value.ToString()));
             string sinopsis = ConsultasData.ConsultaRetornaString("fxSinopsisPeli ", false, ls);
             pelicula = new PeliculaDAO(
@@ -54,11 +38,11 @@ namespace Cine_App_2.Formularios
 
         private void prCargarCombos()
         {
-            CargarGeneros();
+            //CargarGeneros();
             CargarIdiomas();
             CargaINCA();
         }
-
+        /*
         private void CargarGeneros()
         {
             string query = "select * from GENEROS ";// + (Modificacion ? " Where COD_GENERO = "+ : "");
@@ -67,19 +51,20 @@ namespace Cine_App_2.Formularios
             cbgenero.DisplayMember = "NOMBRE";
             cbgenero.ValueMember = "COD_GENERO";
         }
+        */
         
         private void CargarIdiomas()
         {
-            cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("select * from IDIOMAS");
-            cbgenero.DisplayMember = "NOMBRE";
-            cbgenero.ValueMember = "COD_IDIOMA";
+            cbIdioma.DataSource = ConsultasData.ConsultaTablaRetorno("select * from IDIOMAS");
+            cbIdioma.DisplayMember = "NOMBRE";
+            cbIdioma.ValueMember = "COD_IDIOMA";
         }
 
         private void CargaINCA()
         {
-            cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("Select * from CLASIFICACIONES_INCA");
-            cbgenero.DisplayMember = "NOMBRE";
-            cbgenero.ValueMember = "COD_IDIOMA";
+            cbINCA.DataSource = ConsultasData.ConsultaTablaRetorno("Select * from CLASIFICACIONES_INCA");
+            cbINCA.DisplayMember = "NOMBRE";
+            cbINCA.ValueMember = "COD_CLASIFICACION_INCA";
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -99,12 +84,14 @@ namespace Cine_App_2.Formularios
                 MessageBox.Show("categoria INCA no puede estar vacia ");
                 cbINCA.Focus();
             }
+            /*
             if (cbgenero.SelectedIndex == 0)
             {
                 MessageBox.Show("la Pelicula debe poseer un Genero. Asignelo");
                 cbgenero.Focus();
 
             }
+            */
             if (cbIdioma.SelectedIndex == 0)
             {
                 MessageBox.Show("La pelicula posee un idioma original. Asignela!");
@@ -126,9 +113,11 @@ namespace Cine_App_2.Formularios
             ls.Add(new Parametros("@Nombre"        , txtPelicula.Text));
             ls.Add(new Parametros("@Sinopsis"      , txtSinopsis.Text));
             ls.Add(new Parametros("@Productora"    , txtProductora.Text));
-            ls.Add(new Parametros("@Clasificacion" , ((DataRowView)cbINCA.SelectedValue).Row.ItemArray[0].ToString()));
-            ls.Add(new Parametros("@Idioma"        , ((DataRowView)cbIdioma.SelectedValue).Row.ItemArray[0].ToString()));
+            ls.Add(new Parametros("@Clasificacion" , cbINCA.SelectedValue.ToString()));
             ls.Add(new Parametros("@Subtitulada"   , chSubtitulada.Checked ? "1" : "0"));
+            // ls.Add(new Parametros("@Genero"        , cbgenero.SelectedValue.ToString()));
+            ls.Add(new Parametros("@Idioma"        , cbIdioma.SelectedValue.ToString()));
+            
 
             try
             {
@@ -138,7 +127,7 @@ namespace Cine_App_2.Formularios
             }
             catch (Exception E)
             {
-                MessageBox.Show("Datos tecnicos:" + E.Message);
+                MessageBox.Show("Error durante el proceso de grabacion. Datos tecnicos:" + E.Message);
                 throw;
             }
         }

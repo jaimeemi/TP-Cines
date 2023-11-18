@@ -29,7 +29,6 @@ namespace Cine_App_2.Formularios.FormsConsultas
         }
         private void obtenerCombos()
         {
-            obtenerFunciones();
             obtenerGeneros();
             ObtenerSalas();
             ObtenerIdiomas();
@@ -57,14 +56,6 @@ namespace Cine_App_2.Formularios.FormsConsultas
            cbGenero.DataSource = ConsultasData.ConsultaTablaRetorno(query);
            cbGenero.ValueMember = "COD_GENERO";
            cbGenero.DisplayMember = "NOMBRE";
-        }
-
-        private void obtenerFunciones()
-        {   
-           string query = "SELECT 0 as COD_FUNCION,' Elejir Funcion ' as NOMBRE\r\nunion\r\nSELECT \r\nF.COD_FUNCION, P.NOMBRE + '-'+ convert(varchar, F.FECHA, 22) as NOMBRE\r\nFROM FUNCIONES F  \r\nJOIN PELICULAS P ON P.COD_PELICULA = F.COD_PELICULA";
-           cboFunciones.DataSource = ConsultasData.ConsultaTablaRetorno(query);
-           cboFunciones.ValueMember = "COD_FUNCION";
-           cboFunciones.DisplayMember = "NOMBRE";
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -134,7 +125,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
         {
             if (dgvResultados.Rows.Count != 0)
             {
-                int idpelicula = (int)((DataGridViewRow)dgvResultados.Rows[0]).Cells[1].Value;
+                int idpelicula = (int)((DataGridViewRow)dgvResultados.CurrentRow).Cells[1].Value;
                 string NombreFuncion =
                     ((DataGridViewRow)dgvResultados.CurrentRow).Cells[2].Value.ToString() + " " +//Este es Nombre de la Pelicula
                     ((DataGridViewRow)dgvResultados.CurrentRow).Cells[0].Value.ToString() + " " + //Estas es la Fecha
@@ -154,7 +145,9 @@ namespace Cine_App_2.Formularios.FormsConsultas
                     {
                         ConsultasData.EjecutarSP(query, true, parametros);
                         MessageBox.Show("El Registro ha sido eliminado con exito!");
-                    }catch (Exception ex)
+                        btnConsultar_Click(sender, e);
+                    }
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Error durante la eliminacion de la funcion. Detalles tecnicos: "+ex.Message);
                     }                    
@@ -169,8 +162,6 @@ namespace Cine_App_2.Formularios.FormsConsultas
             stQuery += " Where FECHA >= '"+dtpDesde.Value.ToString()+"' And FECHA <= '"+ dtpHasta.Value.ToString()+"'";
             if (txtPelicula.Text != "")
                 stQuery += " AND PELICULA like Upper('"+txtPelicula.Text+"%')";
-            if (cboFunciones.SelectedIndex != 0)
-                stQuery += " AND COD_FUNCION = " + cboFunciones.SelectedIndex;
             if (cbGenero.SelectedIndex != 0)
                 stQuery += " AND COD_GENERO = "+cbGenero.SelectedIndex;
             if (cbSalas.SelectedIndex != 0)
@@ -178,12 +169,12 @@ namespace Cine_App_2.Formularios.FormsConsultas
             if (cbIdiomas.SelectedIndex != 0)
                 stQuery += " AND COD_IDIOMA = " + cbIdiomas.SelectedIndex;
 
+            dgvResultados.DataSource = null;
             try
             {
                 dgvResultados.DataSource = ConsultasData.ConsultaTablaRetorno(stQuery);
                 //Escondo columnas Solo son usadas para filtrar
                 dgvResultados.Columns["COD_PELICULA"].Visible = false;
-                dgvResultados.Columns["COD_FUNCION"].Visible = false;
                 dgvResultados.Columns["COD_GENERO"].Visible = false;
                 dgvResultados.Columns["COD_SALA"].Visible = false;
                 dgvResultados.Columns["COD_IDIOMA"].Visible = false;
