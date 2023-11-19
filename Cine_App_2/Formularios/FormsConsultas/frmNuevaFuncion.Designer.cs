@@ -123,6 +123,7 @@
             this.Controls.Add(this.lblInca);
             this.Name = "frmNuevaFuncion";
             this.Text = "frmNuevaFuncion";
+            this.Leave += new System.EventHandler(this.frmNuevaFuncion_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

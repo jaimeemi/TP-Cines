@@ -5,16 +5,17 @@ namespace Cine_App_2.Formularios
     public class PeliculaDAO
     {
 
-        private int COD_PELICUAL { get; set; }
-        private string NOMBRE { get; set; }
-        private string SINOPSIS { get; set; }
-        private string PRODUCTORA { get; set; }
-        private int COD_CLASIFICACION_INCA { get; set; }
-        private int COD_IDIOMA { get; set; }
-        private bool SUBTITULADA { get; set; }
+        public int COD_PELICUAL { get; set; }
+        public string NOMBRE { get; set; }
+        public string SINOPSIS { get; set; }
+        public string PRODUCTORA { get; set; }
+        public int COD_CLASIFICACION_INCA { get; set; }
+        public int COD_IDIOMA { get; set; }
+        public bool SUBTITULADA { get; set; }
+        public int COD_GENERO { get; set; }
 
 
-        public PeliculaDAO(int cOD_PELICUAL, string nOMBRE, string sINOPSIS, string pRODUCTORA, int cOD_CLASIFICACION_INCA, int cOD_IDIOMA, bool sUBTITULADA)
+        public PeliculaDAO(int cOD_PELICUAL, string nOMBRE, string sINOPSIS, string pRODUCTORA, int cOD_CLASIFICACION_INCA, int cOD_IDIOMA, bool sUBTITULADA, int cOD_GENERO)
         {
             COD_PELICUAL = cOD_PELICUAL;
             NOMBRE = nOMBRE;
@@ -23,6 +24,7 @@ namespace Cine_App_2.Formularios
             COD_CLASIFICACION_INCA = cOD_CLASIFICACION_INCA;
             COD_IDIOMA = cOD_IDIOMA;
             SUBTITULADA = sUBTITULADA;
+            COD_GENERO = cOD_GENERO;
         }
     }
 }

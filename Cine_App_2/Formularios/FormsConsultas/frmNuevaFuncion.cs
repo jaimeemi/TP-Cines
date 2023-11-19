@@ -13,12 +13,10 @@ namespace Cine_App_2.Formularios.FormsConsultas
 {
     public partial class frmNuevaFuncion : Form
     {
-        public bool GRABOFUNCION {  get; set; }
         private List<Parametros> parametros = new List<Parametros>();
         public frmNuevaFuncion()
         {
             InitializeComponent();
-            GRABOFUNCION = false;
             ObtenerSalas();
             ObtenerPeliculas();
             dtpDesde.Value = DateTime.Now;
@@ -45,11 +43,13 @@ namespace Cine_App_2.Formularios.FormsConsultas
             if (cbPelicula.SelectedIndex == 0)
             {
                 MessageBox.Show("Debe selecciona la pelicula para la funcion");
+                return;
                 cbPelicula.Focus();
             }
             if (cbSala.SelectedIndex == 0)
             {
-                MessageBox.Show("Debe selecciona una sala");
+                MessageBox.Show("Debe selecciona una sala"); 
+                return;
                 cbSala.Focus();
             }
             
@@ -68,15 +68,18 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 {
                     ConsultasData.EjecutarSP("spNuevaFuncion", true, parametros);
                     MessageBox.Show("Se Grabo con exito la funcion");
-                    GRABOFUNCION = true;
                     Dispose();
                 }
                 catch 
                 {
                     MessageBox.Show("Algun dato se encuentra incorrecto");
-                    GRABOFUNCION = false;
                 }
             }
+        }
+
+        private void frmNuevaFuncion_Leave(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

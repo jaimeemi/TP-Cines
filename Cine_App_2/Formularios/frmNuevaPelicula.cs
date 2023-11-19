@@ -8,11 +8,12 @@ namespace Cine_App_2.Formularios
 {
     public partial class frmNuevaPelicula : Form
     {
+        //Variables de Uso del Form
         private List<Parametros> ls = new List<Parametros>();
         public int CodigoPelicula {  get; set; }
         private bool Modificacion {  get; set; }
-
         private PeliculaDAO pelicula;
+        //***************************************************************
         public frmNuevaPelicula()
         {
             InitializeComponent();
@@ -21,38 +22,43 @@ namespace Cine_App_2.Formularios
         }
         public void CargarDatosPelicula(DataGridViewRow datos)
         {
-            ls.Add(new Parametros("@IdPeli", datos.Cells[1].Value.ToString()));
-            string sinopsis = ConsultasData.ConsultaRetornaString("fxSinopsisPeli ", false, ls);
+            string sinopsis = ConsultasData.ConsultaRetornaString(" select dbo.fxSinopsisPeli (" + datos.Cells[1].Value.ToString() + ")");
             pelicula = new PeliculaDAO(
                 (int)datos.Cells[1].Value, //Codigo pelicula
                 datos.Cells[2].Value.ToString(),//nombre
-                datos.Cells[3].Value.ToString(),// productora
                 sinopsis,// sinopsis
-                (int)datos.Cells[6].Value,// COD_CLASIFICACION_INCA
+                datos.Cells[3].Value.ToString(),// productora
+                (int)datos.Cells[13].Value,// COD_CLASIFICACION_INCA
                 (int)datos.Cells[11].Value,//idioma
-                (bool)datos.Cells[4].Value//Subtitulada
+                (bool)datos.Cells[4].Value,//Subtitulada
+                (int)datos.Cells[9].Value//COD_genero
                 );
             Modificacion = true;
             datos.Cells[7].Value.ToString();
+
+            txtPelicula.Text = pelicula.NOMBRE;
+            txtSinopsis.Text = sinopsis;
+            txtProductora.Text = pelicula.PRODUCTORA;
+            cbIdioma.SelectedIndex = pelicula.COD_IDIOMA;
+            cbINCA.SelectedIndex = pelicula.COD_CLASIFICACION_INCA;
+            chSubtitulada.Checked = pelicula.SUBTITULADA;
+            cbgeneros.SelectedIndex = pelicula.COD_GENERO;
         }
 
         private void prCargarCombos()
         {
-            //CargarGeneros();
+            CargarGeneros();
             CargarIdiomas();
             CargaINCA();
         }
-        /*
         private void CargarGeneros()
         {
-            string query = "select * from GENEROS ";// + (Modificacion ? " Where COD_GENERO = "+ : "");
-            
-            cbgenero.DataSource = ConsultasData.ConsultaTablaRetorno("select * from GENEROS");
-            cbgenero.DisplayMember = "NOMBRE";
-            cbgenero.ValueMember = "COD_GENERO";
+            string query = "select * from GENEROS ";
+
+            cbgeneros.DataSource = ConsultasData.ConsultaTablaRetorno("select * from GENEROS");
+            cbgeneros.DisplayMember = "NOMBRE";
+            cbgeneros.ValueMember = "COD_GENERO";
         }
-        */
-        
         private void CargarIdiomas()
         {
             cbIdioma.DataSource = ConsultasData.ConsultaTablaRetorno("select * from IDIOMAS");
@@ -73,29 +79,31 @@ namespace Cine_App_2.Formularios
             {
                 MessageBox.Show("Debe Ingresar Nombre de Pelicula");
                 txtPelicula.Focus();
+                return;
             }
             if (txtProductora.Text == "")
             {
                 MessageBox.Show("Ingrese productora");
                 txtProductora.Focus();
+                return;
             }
             if (cbINCA.SelectedIndex == 0)
             {
                 MessageBox.Show("categoria INCA no puede estar vacia ");
                 cbINCA.Focus();
+                return;
             }
-            /*
-            if (cbgenero.SelectedIndex == 0)
+            if (cbgeneros.SelectedIndex == 0)
             {
                 MessageBox.Show("la Pelicula debe poseer un Genero. Asignelo");
-                cbgenero.Focus();
-
+                cbgeneros.Focus();
+                return;    
             }
-            */
             if (cbIdioma.SelectedIndex == 0)
             {
                 MessageBox.Show("La pelicula posee un idioma original. Asignela!");
                 cbIdioma.Focus();
+                return;
             }
 
             try
@@ -110,19 +118,19 @@ namespace Cine_App_2.Formularios
 
         private void prGrabarNuevaPelicula()
         {
+            ls.Add(new Parametros("@IDPelicula"   , pelicula.COD_PELICUAL.ToString())); 
             ls.Add(new Parametros("@Nombre"        , txtPelicula.Text));
             ls.Add(new Parametros("@Sinopsis"      , txtSinopsis.Text));
             ls.Add(new Parametros("@Productora"    , txtProductora.Text));
             ls.Add(new Parametros("@Clasificacion" , cbINCA.SelectedValue.ToString()));
             ls.Add(new Parametros("@Subtitulada"   , chSubtitulada.Checked ? "1" : "0"));
-            // ls.Add(new Parametros("@Genero"        , cbgenero.SelectedValue.ToString()));
             ls.Add(new Parametros("@Idioma"        , cbIdioma.SelectedValue.ToString()));
-            
+            ls.Add(new Parametros("@Genero"        , cbgeneros.SelectedValue.ToString()));
 
             try
             {
-                ConsultasData.EjecutarSP("spNuevaPelicula", true, ls);
-                MessageBox.Show("Nueva Pelicula Grabada con Exito!");
+                ConsultasData.EjecutarSP("spUpdatePelicula", true, ls);
+                MessageBox.Show("Se Modifico Pelicula con Exito!");
                 Dispose();
             }
             catch (Exception E)

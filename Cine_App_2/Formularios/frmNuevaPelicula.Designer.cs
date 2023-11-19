@@ -40,6 +40,8 @@
             this.cbIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.txtProductora = new System.Windows.Forms.TextBox();
+            this.cbgeneros = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPelicula
@@ -95,7 +97,7 @@
             this.cbINCA.FormattingEnabled = true;
             this.cbINCA.Location = new System.Drawing.Point(333, 71);
             this.cbINCA.Name = "cbINCA";
-            this.cbINCA.Size = new System.Drawing.Size(227, 21);
+            this.cbINCA.Size = new System.Drawing.Size(79, 21);
             this.cbINCA.TabIndex = 3;
             // 
             // lblInca
@@ -156,12 +158,33 @@
             this.txtProductora.Size = new System.Drawing.Size(227, 20);
             this.txtProductora.TabIndex = 2;
             // 
+            // cbgeneros
+            // 
+            this.cbgeneros.FormattingEnabled = true;
+            this.cbgeneros.Location = new System.Drawing.Point(421, 71);
+            this.cbgeneros.Name = "cbgeneros";
+            this.cbgeneros.Size = new System.Drawing.Size(139, 21);
+            this.cbgeneros.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(418, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Genero:";
+            // 
             // frmNuevaPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(572, 220);
+            this.Controls.Add(this.cbgeneros);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProductora);
             this.Controls.Add(this.cbIdioma);
             this.Controls.Add(this.lblIdioma);
@@ -194,5 +217,7 @@
         private System.Windows.Forms.ComboBox cbIdioma;
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.TextBox txtProductora;
+        private System.Windows.Forms.ComboBox cbgeneros;
+        private System.Windows.Forms.Label label1;
     }
 }

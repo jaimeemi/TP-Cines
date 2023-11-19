@@ -1,12 +1,7 @@
 ﻿using Cine_App_2.Datos;
-using Cine_App_2.Entidades;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Cine_App_2.Formularios.FormsConsultas
@@ -62,50 +57,13 @@ namespace Cine_App_2.Formularios.FormsConsultas
         {
             Dispose();
         }
-
-        /*
-        private void button1_Click(object sender, EventArgs e)
-        {
-            parametros.Add(new Parametros("@funcion", (((DataRowView)cboFunciones.SelectedValue).Row.ItemArray[0].ToString())));
-            parametros.Add(new Parametros("@desde"  , dtpDesde.Value.ToString()));
-            parametros.Add(new Parametros("@hasta"  , dtpHasta.Value.ToString()));
-
-            DataTable Resultado = ConsultasData.ConsultaTablaRetorno("PA_REPORTE_ENTRADAS", true, parametros);
-            if (Resultado.Rows.Count > 0)
-            {
-                if (!Resultado.Rows[0].ItemArray[0].ToString().Contains("La fecha desde no puede ser mayor a la fecha hasta"))
-                {
-                    dgvResultados.DataSource = Resultado;
-                }
-                else
-                {
-                    MessageBox.Show("La fecha desde no puede ser mayor ni igual a la fecha hasta");
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay resultados");
-            }
- 
-        }
-        */
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmNuevaFuncion nf = new frmNuevaFuncion();
             nf.StartPosition = FormStartPosition.CenterScreen;
             nf.ShowDialog();
-            if (nf.GRABOFUNCION == false)
-            {
-                MessageBox.Show("No ha realizado una nueva funciona para proseguir! Verifique");
-                nf.ShowDialog();
-            }
-            else
-                btnConsultar_Click(this, e);
-        }
-
-        private void prNuevaFuncion()
-        {
+            if (nf == null)
+                btnConsultar_Click(sender, e);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -115,8 +73,8 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 frmNuevaPelicula np = new frmNuevaPelicula();
                 np.Text = "Modificar Pelicula";
                 np.StartPosition = FormStartPosition.CenterScreen;
-                np.CodigoPelicula = (int)((DataGridViewRow)dgvResultados.CurrentRow).Cells[2].Value;
-                np.CargarDatosPelicula( (DataGridViewRow)dgvResultados.CurrentRow );
+                np.CodigoPelicula = (int)dgvResultados.CurrentRow.Cells[1].Value;
+                np.CargarDatosPelicula(dgvResultados.CurrentRow);
                 np.Show();
             }
         }
@@ -139,6 +97,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 if (dialogResult == DialogResult.Yes) 
                 {
                     string a = ((DataGridViewRow)dgvResultados.CurrentRow).Cells[1].Value.ToString();
+                    parametros.Clear();
                     parametros.Add(new Parametros("@pIDFuncion", a ));
                     string query = "prBorrarFuncion";
                     try
@@ -157,7 +116,7 @@ namespace Cine_App_2.Formularios.FormsConsultas
         
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string stQuery = "Select * From vFunciones";
+            string stQuery = "Select Distinct * From vFunciones";
 
             stQuery += " Where FECHA >= '"+dtpDesde.Value.ToString()+"' And FECHA <= '"+ dtpHasta.Value.ToString()+"'";
             if (txtPelicula.Text != "")
@@ -178,6 +137,8 @@ namespace Cine_App_2.Formularios.FormsConsultas
                 dgvResultados.Columns["COD_GENERO"].Visible = false;
                 dgvResultados.Columns["COD_SALA"].Visible = false;
                 dgvResultados.Columns["COD_IDIOMA"].Visible = false;
+                dgvResultados.Columns["COD_FUNCION"].Visible = false;
+                dgvResultados.Columns["COD_CLASIFICACION_INCA"].Visible = false;
             }
             catch 
             {
