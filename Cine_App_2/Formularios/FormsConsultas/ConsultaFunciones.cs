@@ -9,7 +9,8 @@ namespace Cine_App_2.Formularios.FormsConsultas
     public partial class frmConsultaFunciones : Form
     {
         private List<Parametros> parametros = new List<Parametros>();
-        
+         
+
         public frmConsultaFunciones()
         {
             InitializeComponent();
