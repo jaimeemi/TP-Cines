@@ -53,7 +53,7 @@ namespace Cine_App_2.Formularios
         }
         private void CargarGeneros()
         {
-            string query = "select * from GENEROS ";
+            string query = "select 0 as Cod_GENERO ,'' as Nombre union Select * from GENEROS";
 
             cbgeneros.DataSource = ConsultasData.ConsultaTablaRetorno("select * from GENEROS");
             cbgeneros.DisplayMember = "NOMBRE";
@@ -61,14 +61,14 @@ namespace Cine_App_2.Formularios
         }
         private void CargarIdiomas()
         {
-            cbIdioma.DataSource = ConsultasData.ConsultaTablaRetorno("select * from IDIOMAS");
+            cbIdioma.DataSource = ConsultasData.ConsultaTablaRetorno("select 0 as COD_IDIOMA ,'' as Nombre union Select * from IDIOMAS");
             cbIdioma.DisplayMember = "NOMBRE";
             cbIdioma.ValueMember = "COD_IDIOMA";
         }
 
         private void CargaINCA()
         {
-            cbINCA.DataSource = ConsultasData.ConsultaTablaRetorno("Select * from CLASIFICACIONES_INCA");
+            cbINCA.DataSource = ConsultasData.ConsultaTablaRetorno("select 0 as COD_CLASIFICACION_INCA ,'' as  Nombre union Select COD_CLASIFICACION_INCA , NOMBRE  from CLASIFICACIONES_INCA ");
             cbINCA.DisplayMember = "NOMBRE";
             cbINCA.ValueMember = "COD_CLASIFICACION_INCA";
         }
@@ -118,18 +118,33 @@ namespace Cine_App_2.Formularios
 
         private void prGrabarNuevaPelicula()
         {
-            ls.Add(new Parametros("@IDPelicula"   , pelicula.COD_PELICUAL.ToString())); 
-            ls.Add(new Parametros("@Nombre"        , txtPelicula.Text));
-            ls.Add(new Parametros("@Sinopsis"      , txtSinopsis.Text));
-            ls.Add(new Parametros("@Productora"    , txtProductora.Text));
-            ls.Add(new Parametros("@Clasificacion" , cbINCA.SelectedValue.ToString()));
-            ls.Add(new Parametros("@Subtitulada"   , chSubtitulada.Checked ? "1" : "0"));
-            ls.Add(new Parametros("@Idioma"        , cbIdioma.SelectedValue.ToString()));
-            ls.Add(new Parametros("@Genero"        , cbgeneros.SelectedValue.ToString()));
+            string query = Modificacion ? "spNuevaPelicula" : "spUpdatePelicula";
+            if (Modificacion) // MODIFICA UPDATE
+            {
+                ls.Add(new Parametros("@IDPelicula", pelicula.COD_PELICUAL.ToString()));
+                ls.Add(new Parametros("@Nombre", txtPelicula.Text));
+                ls.Add(new Parametros("@Sinopsis", txtSinopsis.Text));
+                ls.Add(new Parametros("@Productora", txtProductora.Text));
+                ls.Add(new Parametros("@Clasificacion", cbINCA.SelectedValue.ToString()));
+                ls.Add(new Parametros("@Subtitulada", chSubtitulada.Checked ? "1" : "0"));
+                ls.Add(new Parametros("@Idioma", cbIdioma.SelectedValue.ToString()));
+                ls.Add(new Parametros("@Genero", cbgeneros.SelectedValue.ToString()));
+                
+            } 
+            else // NUEVA
+            {
+                ls.Add(new Parametros("@Nombre", txtPelicula.Text));
+                ls.Add(new Parametros("@Sinopsis", txtSinopsis.Text));
+                ls.Add(new Parametros("@Productora", txtProductora.Text));
+                ls.Add(new Parametros("@Clasificacion", cbINCA.SelectedValue.ToString()));
+                ls.Add(new Parametros("@Subtitulada", chSubtitulada.Checked ? "1" : "0"));
+                ls.Add(new Parametros("@Idioma", cbIdioma.SelectedValue.ToString()));
+                ls.Add(new Parametros("@Genero", cbgeneros.SelectedValue.ToString()));
+            }
 
             try
             {
-                ConsultasData.EjecutarSP("spUpdatePelicula", true, ls);
+                ConsultasData.EjecutarSP("query", true, ls);
                 MessageBox.Show("Se Modifico Pelicula con Exito!");
                 Dispose();
             }
