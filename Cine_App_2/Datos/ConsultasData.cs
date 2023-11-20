@@ -8,6 +8,7 @@ namespace Cine_App_2.Datos
 {
     public class ConsultasData
     {
+         
         private static SqlConnection conexion;
         private static SqlCommand comando;
         private static string cadenaConexion = "Data Source=Usuario-PC\\SQLEXPRESS;Initial Catalog=DB_CINEMA;Integrated Security=True";
