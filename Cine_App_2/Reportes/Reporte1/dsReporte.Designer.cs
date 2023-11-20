@@ -279,19 +279,9 @@ namespace Cine_App_2.Reportes.Reporte1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
-            private global::System.Data.DataColumn columnCliente;
-            
-            private global::System.Data.DataColumn columnFECHA;
-            
             private global::System.Data.DataColumn columnPelicula;
             
-            private global::System.Data.DataColumn columnSubitulada;
-            
-            private global::System.Data.DataColumn columnSala;
-            
-            private global::System.Data.DataColumn columnGenero;
-            
-            private global::System.Data.DataColumn columnPRECIO;
+            private global::System.Data.DataColumn columnTotalPorPelicula;
             
             private global::System.Data.DataColumn columnTipoCliente;
             
@@ -330,22 +320,6 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ClienteColumn {
-                get {
-                    return this.columnCliente;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FECHAColumn {
-                get {
-                    return this.columnFECHA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn PeliculaColumn {
                 get {
                     return this.columnPelicula;
@@ -354,33 +328,9 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SubituladaColumn {
+            public global::System.Data.DataColumn TotalPorPeliculaColumn {
                 get {
-                    return this.columnSubitulada;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SalaColumn {
-                get {
-                    return this.columnSala;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GeneroColumn {
-                get {
-                    return this.columnGenero;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PRECIOColumn {
-                get {
-                    return this.columnPRECIO;
+                    return this.columnTotalPorPelicula;
                 }
             }
             
@@ -429,16 +379,11 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Cliente, System.DateTime FECHA, string Pelicula, string Subitulada, string Sala, string Genero, decimal PRECIO, string TipoCliente) {
+            public DataTable1Row AddDataTable1Row(string Pelicula, decimal TotalPorPelicula, string TipoCliente) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Cliente,
-                        FECHA,
                         Pelicula,
-                        Subitulada,
-                        Sala,
-                        Genero,
-                        PRECIO,
+                        TotalPorPelicula,
                         TipoCliente};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
@@ -462,42 +407,22 @@ namespace Cine_App_2.Reportes.Reporte1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnCliente = base.Columns["Cliente"];
-                this.columnFECHA = base.Columns["FECHA"];
                 this.columnPelicula = base.Columns["Pelicula"];
-                this.columnSubitulada = base.Columns["Subitulada"];
-                this.columnSala = base.Columns["Sala"];
-                this.columnGenero = base.Columns["Genero"];
-                this.columnPRECIO = base.Columns["PRECIO"];
+                this.columnTotalPorPelicula = base.Columns["TotalPorPelicula"];
                 this.columnTipoCliente = base.Columns["TipoCliente"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCliente);
-                this.columnFECHA = new global::System.Data.DataColumn("FECHA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFECHA);
                 this.columnPelicula = new global::System.Data.DataColumn("Pelicula", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPelicula);
-                this.columnSubitulada = new global::System.Data.DataColumn("Subitulada", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubitulada);
-                this.columnSala = new global::System.Data.DataColumn("Sala", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSala);
-                this.columnGenero = new global::System.Data.DataColumn("Genero", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGenero);
-                this.columnPRECIO = new global::System.Data.DataColumn("PRECIO", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPRECIO);
+                this.columnTotalPorPelicula = new global::System.Data.DataColumn("TotalPorPelicula", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalPorPelicula);
                 this.columnTipoCliente = new global::System.Data.DataColumn("TipoCliente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipoCliente);
-                this.columnCliente.ReadOnly = true;
-                this.columnCliente.MaxLength = 401;
                 this.columnPelicula.MaxLength = 200;
-                this.columnSubitulada.ReadOnly = true;
-                this.columnSubitulada.MaxLength = 2;
-                this.columnSala.MaxLength = 50;
-                this.columnGenero.MaxLength = 200;
+                this.columnTotalPorPelicula.ReadOnly = true;
                 this.columnTipoCliente.MaxLength = 100;
             }
             
@@ -641,38 +566,6 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Cliente {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.ClienteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.ClienteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime FECHA {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.FECHAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECHA\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.FECHAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Pelicula {
                 get {
                     try {
@@ -689,65 +582,17 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Subitulada {
+            public decimal TotalPorPelicula {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.SubituladaColumn]));
+                        return ((decimal)(this[this.tableDataTable1.TotalPorPeliculaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Subitulada\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalPorPelicula\' de la tabla \'DataTable1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.SubituladaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Sala {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.SalaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Sala\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.SalaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Genero {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.GeneroColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Genero\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.GeneroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal PRECIO {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableDataTable1.PRECIOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PRECIO\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.PRECIOColumn] = value;
+                    this[this.tableDataTable1.TotalPorPeliculaColumn] = value;
                 }
             }
             
@@ -769,30 +614,6 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsClienteNull() {
-                return this.IsNull(this.tableDataTable1.ClienteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetClienteNull() {
-                this[this.tableDataTable1.ClienteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFECHANull() {
-                return this.IsNull(this.tableDataTable1.FECHAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFECHANull() {
-                this[this.tableDataTable1.FECHAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPeliculaNull() {
                 return this.IsNull(this.tableDataTable1.PeliculaColumn);
             }
@@ -805,50 +626,14 @@ namespace Cine_App_2.Reportes.Reporte1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSubituladaNull() {
-                return this.IsNull(this.tableDataTable1.SubituladaColumn);
+            public bool IsTotalPorPeliculaNull() {
+                return this.IsNull(this.tableDataTable1.TotalPorPeliculaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSubituladaNull() {
-                this[this.tableDataTable1.SubituladaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSalaNull() {
-                return this.IsNull(this.tableDataTable1.SalaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSalaNull() {
-                this[this.tableDataTable1.SalaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGeneroNull() {
-                return this.IsNull(this.tableDataTable1.GeneroColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGeneroNull() {
-                this[this.tableDataTable1.GeneroColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPRECIONull() {
-                return this.IsNull(this.tableDataTable1.PRECIOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPRECIONull() {
-                this[this.tableDataTable1.PRECIOColumn] = global::System.Convert.DBNull;
+            public void SetTotalPorPeliculaNull() {
+                this[this.tableDataTable1.TotalPorPeliculaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -913,13 +698,13 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
         
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        private global::Microsoft.Data.SqlClient.SqlDataAdapter _adapter;
         
-        private global::System.Data.SqlClient.SqlConnection _connection;
+        private global::Microsoft.Data.SqlClient.SqlConnection _connection;
         
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        private global::Microsoft.Data.SqlClient.SqlTransaction _transaction;
         
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        private global::Microsoft.Data.SqlClient.SqlCommand[] _commandCollection;
         
         private bool _clearBeforeFill;
         
@@ -931,7 +716,7 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+        protected internal global::Microsoft.Data.SqlClient.SqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();
@@ -942,7 +727,7 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
+        internal global::Microsoft.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -962,7 +747,7 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
                 }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                        ((global::Microsoft.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
@@ -970,7 +755,7 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+        internal global::Microsoft.Data.SqlClient.SqlTransaction Transaction {
             get {
                 return this._transaction;
             }
@@ -996,7 +781,7 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+        protected global::Microsoft.Data.SqlClient.SqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
                     this.InitCommandCollection();
@@ -1019,17 +804,12 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            this._adapter = new global::Microsoft.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("Cliente", "Cliente");
-            tableMapping.ColumnMappings.Add("FECHA", "FECHA");
             tableMapping.ColumnMappings.Add("Pelicula", "Pelicula");
-            tableMapping.ColumnMappings.Add("Subitulada", "Subitulada");
-            tableMapping.ColumnMappings.Add("Sala", "Sala");
-            tableMapping.ColumnMappings.Add("Genero", "Genero");
-            tableMapping.ColumnMappings.Add("PRECIO", "PRECIO");
+            tableMapping.ColumnMappings.Add("TotalPorPelicula", "TotalPorPelicula");
             tableMapping.ColumnMappings.Add("TipoCliente", "TipoCliente");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1037,27 +817,29 @@ namespace Cine_App_2.Reportes.Reporte1.dsReporteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Cine_App_2.Properties.Settings.Default.DB_CINEMAConnectionString;
+            this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Cine_App_2.Properties.Settings.Default.DB_CINEMAConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CLIENTES.NOMBRE + ' ' + CLIENTES.APELLIDO AS Cliente, FUNCIONES.FECHA, PELICULAS.NOMBRE AS Pelicula, CASE WHEN PELICULAS.SUBTITULADA = 1 THEN 'Si' ELSE 'No' END AS Subitulada, SALAS.NOMBRE AS Sala, 
-                         GENEROS.NOMBRE AS Genero, TICKETS.PRECIO, TIPOS_CLIENTES_1.DESCRIPCION AS 'TipoCliente'
-FROM            PELICULAS INNER JOIN
-                         FUNCIONES ON PELICULAS.COD_PELICULA = FUNCIONES.COD_PELICULA INNER JOIN
-                         SALAS ON FUNCIONES.COD_SALA = SALAS.COD_SALA LEFT OUTER JOIN
-                         TICKETS ON FUNCIONES.COD_FUNCION = TICKETS.COD_FUNCION INNER JOIN
-                         GENEROS_PELICULAS ON PELICULAS.COD_PELICULA = GENEROS_PELICULAS.COD_PELICULA INNER JOIN
-                         GENEROS ON GENEROS_PELICULAS.COD_GENERO = GENEROS.COD_GENERO INNER JOIN
-                         TIPOS_CLIENTES ON TICKETS.COD_TIPO_CLIENTE = TIPOS_CLIENTES.COD_TIPO_CLIENTE INNER JOIN
-                         CLIENTES ON TIPOS_CLIENTES.COD_TIPO_CLIENTE = CLIENTES.COD_TIPO_CLIENTE INNER JOIN
-                         TIPOS_CLIENTES AS TIPOS_CLIENTES_1 ON TICKETS.COD_TIPO_CLIENTE = TIPOS_CLIENTES_1.COD_TIPO_CLIENTE AND CLIENTES.COD_TIPO_CLIENTE = TIPOS_CLIENTES_1.COD_TIPO_CLIENTE";
+            this._commandCollection[0].CommandText = @"--Total Ventas Por Pelicula y Generaciones de Cliente
+SELECT P.NOMBRE AS Pelicula, 
+			 Sum(T.PRECIO) TotalPorPelicula,
+			 TC.DESCRIPCION TipoCliente
+FROM PELICULAS P
+INNER JOIN FUNCIONES F ON P.COD_PELICULA = F.COD_PELICULA 
+INNER JOIN SALAS S ON F.COD_SALA = S.COD_SALA 
+LEFT OUTER JOIN TICKETS T ON F.COD_FUNCION = T.COD_FUNCION 
+INNER JOIN GENEROS G ON G.COD_GENERO = P.COD_GENERO
+INNER JOIN TIPOS_CLIENTES TC ON T.COD_TIPO_CLIENTE = TC.COD_TIPO_CLIENTE 
+INNER JOIN CLIENTES C ON TC.COD_TIPO_CLIENTE = C.COD_TIPO_CLIENTE 
+GROUP BY P.NOMBRE,TC.DESCRIPCION
+ORDER BY 1,3";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

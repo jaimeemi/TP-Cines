@@ -28,7 +28,7 @@ namespace ApiCinema.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error interno! Intente luego");
+                return StatusCode(500, "Error interno! Intente luego.Datos Tecnicos: " + ex.Message);
             }
         }
         //BORRAR
@@ -41,7 +41,7 @@ namespace ApiCinema.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error interno! Intente luego");
+                return StatusCode(500, "Error interno! Intente luego.Datos Tecnicos: " + ex.Message);
             }
         }
         //ALTA-INSERTAR NUEVA
@@ -59,7 +59,7 @@ namespace ApiCinema.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error interno! Intente luego");
+                return StatusCode(500, "Error interno! Intente luego.Datos Tecnicos: " + ex.Message);
             }
         }
 
@@ -78,7 +78,7 @@ namespace ApiCinema.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error interno! Intente luego");
+                return StatusCode(500, "Error interno! Intente luego.Datos Tecnicos: " + ex.Message);
             }
         }
 

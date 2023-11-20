@@ -114,7 +114,7 @@
             // 
             this.consultaFunciónToolStripMenuItem.Name = "consultaFunciónToolStripMenuItem";
             this.consultaFunciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultaFunciónToolStripMenuItem.Text = "Consulta_Función";
+            this.consultaFunciónToolStripMenuItem.Text = "Consulta Función";
             this.consultaFunciónToolStripMenuItem.Click += new System.EventHandler(this.consultaFunciónToolStripMenuItem_Click);
             // 
             // transacciónToolStripMenuItem
@@ -129,13 +129,13 @@
             // altaFacturaToolStripMenuItem
             // 
             this.altaFacturaToolStripMenuItem.Name = "altaFacturaToolStripMenuItem";
-            this.altaFacturaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.altaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altaFacturaToolStripMenuItem.Text = "Alta_Factura";
             // 
             // consultaFacturaToolStripMenuItem
             // 
             this.consultaFacturaToolStripMenuItem.Name = "consultaFacturaToolStripMenuItem";
-            this.consultaFacturaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.consultaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaFacturaToolStripMenuItem.Text = "Consulta_Factura";
             // 
             // reportesToolStripMenuItem
@@ -149,7 +149,7 @@
             // reporteFuncionesToolStripMenuItem
             // 
             this.reporteFuncionesToolStripMenuItem.Name = "reporteFuncionesToolStripMenuItem";
-            this.reporteFuncionesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.reporteFuncionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reporteFuncionesToolStripMenuItem.Text = "Reporte Funciones";
             this.reporteFuncionesToolStripMenuItem.Click += new System.EventHandler(this.reporteFuncionesToolStripMenuItem_Click);
             // 
